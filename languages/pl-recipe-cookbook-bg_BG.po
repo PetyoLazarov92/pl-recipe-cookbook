@@ -309,4 +309,7 @@ msgstr "Изчисти филтрите"
 msgid "Load More"
 msgstr "Зареди още"
 
+msgid "You might also like"
+msgstr "Може да харесате и"
+
 
