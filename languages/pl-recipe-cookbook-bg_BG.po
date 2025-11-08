@@ -1,0 +1,312 @@
+# Translation file for PL Recipe Cookbook
+# Copyright (C) 2024 Plazarov
+# This file is distributed under the GPL v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: PL Recipe Cookbook 1.0.0\n"
+"Report-Msgid-Bugs-To: https://plazarov.com\n"
+"POT-Creation-Date: 2024-11-08 14:00:00+0000\n"
+"PO-Revision-Date: 2024-11-08 14:00:00+0000\n"
+"Last-Translator: Plazarov\n"
+"Language-Team: Bulgarian\n"
+"Language: bg_BG\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: pl-recipe-cookbook.php
+msgctxt "Post type general name"
+msgid "Recipes"
+msgstr "Рецепти"
+
+msgctxt "Post type singular name"
+msgid "Recipe"
+msgstr "Рецепта"
+
+msgctxt "Admin Menu text"
+msgid "Recipes"
+msgstr "Рецепти"
+
+msgctxt "Add New on Toolbar"
+msgid "Recipe"
+msgstr "Рецепта"
+
+msgid "Add New"
+msgstr "Добави нова"
+
+msgid "Add New Recipe"
+msgstr "Добави нова рецепта"
+
+msgid "New Recipe"
+msgstr "Нова рецепта"
+
+msgid "Edit Recipe"
+msgstr "Редактирай рецепта"
+
+msgid "View Recipe"
+msgstr "Виж рецепта"
+
+msgid "All Recipes"
+msgstr "Всички рецепти"
+
+msgid "Search Recipes"
+msgstr "Търси рецепти"
+
+msgid "Parent Recipes:"
+msgstr "Родителски рецепти:"
+
+msgid "No recipes found."
+msgstr "Няма намерени рецепти."
+
+msgid "No recipes found in Trash."
+msgstr "Няма намерени рецепти в кошчето."
+
+msgctxt "Overrides the \"Featured Image\" phrase"
+msgid "Recipe Image"
+msgstr "Снимка на рецептата"
+
+msgctxt "Overrides the \"Set featured image\" phrase"
+msgid "Set recipe image"
+msgstr "Задай снимка на рецептата"
+
+msgctxt "Overrides the \"Remove featured image\" phrase"
+msgid "Remove recipe image"
+msgstr "Премахни снимката на рецептата"
+
+msgctxt "Overrides the \"Use as featured image\" phrase"
+msgid "Use as recipe image"
+msgstr "Използвай като снимка на рецептата"
+
+msgctxt "The post type archive label used in nav menus"
+msgid "Recipe archives"
+msgstr "Архив с рецепти"
+
+msgctxt "Overrides the \"Insert into post\" phrase"
+msgid "Insert into recipe"
+msgstr "Вмъкни в рецептата"
+
+msgctxt "Overrides the \"Uploaded to this post\" phrase"
+msgid "Uploaded to this recipe"
+msgstr "Качено към тази рецепта"
+
+msgctxt "Screen reader text for the filter links"
+msgid "Filter recipes list"
+msgstr "Филтрирай списъка с рецепти"
+
+msgctxt "Screen reader text for the pagination"
+msgid "Recipes list navigation"
+msgstr "Навигация в списъка с рецепти"
+
+msgctxt "Screen reader text for the items list"
+msgid "Recipes list"
+msgstr "Списък с рецепти"
+
+msgctxt "taxonomy general name"
+msgid "Recipe Categories"
+msgstr "Категории рецепти"
+
+msgctxt "taxonomy singular name"
+msgid "Recipe Category"
+msgstr "Категория рецепти"
+
+msgid "Search Recipe Categories"
+msgstr "Търси категории рецепти"
+
+msgid "All Recipe Categories"
+msgstr "Всички категории рецепти"
+
+msgid "Parent Recipe Category"
+msgstr "Родителска категория"
+
+msgid "Parent Recipe Category:"
+msgstr "Родителска категория:"
+
+msgid "Edit Recipe Category"
+msgstr "Редактирай категория"
+
+msgid "Update Recipe Category"
+msgstr "Обнови категория"
+
+msgid "Add New Recipe Category"
+msgstr "Добави нова категория"
+
+msgid "New Recipe Category Name"
+msgstr "Име на нова категория"
+
+msgid "Categories"
+msgstr "Категории"
+
+msgctxt "taxonomy general name"
+msgid "Recipe Tags"
+msgstr "Тагове за рецепти"
+
+msgctxt "taxonomy singular name"
+msgid "Recipe Tag"
+msgstr "Таг за рецепта"
+
+msgid "Search Recipe Tags"
+msgstr "Търси тагове"
+
+msgid "Popular Recipe Tags"
+msgstr "Популярни тагове"
+
+msgid "All Recipe Tags"
+msgstr "Всички тагове"
+
+msgid "Edit Recipe Tag"
+msgstr "Редактирай таг"
+
+msgid "Update Recipe Tag"
+msgstr "Обнови таг"
+
+msgid "Add New Recipe Tag"
+msgstr "Добави нов таг"
+
+msgid "New Recipe Tag Name"
+msgstr "Име на нов таг"
+
+msgid "Separate recipe tags with commas"
+msgstr "Разделете таговете със запетаи"
+
+msgid "Add or remove recipe tags"
+msgstr "Добави или премахни тагове"
+
+msgid "Choose from the most used recipe tags"
+msgstr "Избери от най-използваните тагове"
+
+msgid "Tags"
+msgstr "Тагове"
+
+msgid "Recipe Details"
+msgstr "Детайли на рецептата"
+
+msgid "Preparation Time (minutes):"
+msgstr "Време за подготовка (минути):"
+
+msgid "Cooking Time (minutes):"
+msgstr "Време за готвене (минути):"
+
+msgid "Servings:"
+msgstr "Порции:"
+
+msgid "Difficulty:"
+msgstr "Трудност:"
+
+msgid "Select Difficulty"
+msgstr "Избери трудност"
+
+msgid "Easy"
+msgstr "Лесна"
+
+msgid "Medium"
+msgstr "Средна"
+
+msgid "Hard"
+msgstr "Трудна"
+
+msgid "Ingredients (one per line):"
+msgstr "Продукти (един на ред):"
+
+msgid "Ingredients:"
+msgstr "Продукти:"
+
+msgid "Use [Section Name] to create sections. Example:"
+msgstr "Използвайте [Име на секция] за създаване на секции. Пример:"
+
+msgid "For the dough"
+msgstr "За тестото"
+
+msgid "For the filling"
+msgstr "За плънката"
+
+msgid "Instructions (one step per line):"
+msgstr "Инструкции (една стъпка на ред):"
+
+msgid "Description"
+msgstr "Описание"
+
+msgid "Ingredients"
+msgstr "Продукти"
+
+msgid "Instructions"
+msgstr "Инструкции"
+
+msgid "Shopping Mode"
+msgstr "Режим на пазаруване"
+
+msgid "Prep Time:"
+msgstr "Подготовка:"
+
+msgid "Cook Time:"
+msgstr "Готвене:"
+
+msgid "Total Time:"
+msgstr "Общо време:"
+
+msgid "min"
+msgstr "мин"
+
+msgid "servings"
+msgstr "порции"
+
+msgid "Categories:"
+msgstr "Категории:"
+
+msgid "Tags:"
+msgstr "Тагове:"
+
+msgid "&laquo; Previous"
+msgstr "&laquo; Предишна"
+
+msgid "Next &raquo;"
+msgstr "Следваща &raquo;"
+
+msgid "Jump to Section"
+msgstr "Към секция"
+
+msgid "Categories & Tags"
+msgstr "Категории и тагове"
+
+msgid "Search recipes..."
+msgstr "Търсене на рецепти..."
+
+msgid "Search"
+msgstr "Търси"
+
+#, c-format
+msgid "Category: %s"
+msgstr "Категория: %s"
+
+#, c-format
+msgid "Tag: %s"
+msgstr "Таг: %s"
+
+msgid "No recipes found in this category."
+msgstr "Не са намерени рецепти в тази категория."
+
+msgid "No recipes found with this tag."
+msgstr "Не са намерени рецепти с този таг."
+
+msgid "Filter by:"
+msgstr "Филтрирай по:"
+
+msgid "Category"
+msgstr "Категория"
+
+msgid "All Categories"
+msgstr "Всички категории"
+
+msgid "Tag"
+msgstr "Таг"
+
+msgid "All Tags"
+msgstr "Всички тагове"
+
+msgid "Clear filters"
+msgstr "Изчисти филтрите"
+
+msgid "Load More"
+msgstr "Зареди още"
+
+

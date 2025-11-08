@@ -1,0 +1,15 @@
+# WordPress
+.DS_Store
+Thumbs.db
+
+# Development
+node_modules/
+*.log
+.vscode/
+.idea/
+
+# Compiled files
+*.mo
+
+# Environment
+.env

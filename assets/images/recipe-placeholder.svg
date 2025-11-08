@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <!-- Gradient Background -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e8f5e9;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#c8e6c9;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="iconGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#66bb6a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#43a047;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="600" fill="url(#bgGradient)"/>
+  
+  <!-- Decorative circles -->
+  <circle cx="100" cy="100" r="40" fill="#81c784" opacity="0.3"/>
+  <circle cx="700" cy="500" r="60" fill="#66bb6a" opacity="0.2"/>
+  <circle cx="650" cy="120" r="30" fill="#43a047" opacity="0.25"/>
+  
+  <!-- Main Icon: Chef Hat and Utensils -->
+  <g transform="translate(400, 280)">
+    <!-- Chef Hat -->
+    <ellipse cx="0" cy="-20" rx="80" ry="25" fill="url(#iconGradient)"/>
+    <rect x="-60" y="-20" width="120" height="60" fill="url(#iconGradient)" rx="5"/>
+    <ellipse cx="0" cy="40" rx="70" ry="15" fill="#66bb6a"/>
+    
+    <!-- Fork (left) -->
+    <g transform="translate(-90, 0)">
+      <rect x="-3" y="20" width="6" height="80" fill="#43a047" rx="3"/>
+      <rect x="-12" y="15" width="4" height="25" fill="#43a047" rx="2"/>
+      <rect x="-4" y="15" width="4" height="25" fill="#43a047" rx="2"/>
+      <rect x="4" y="15" width="4" height="25" fill="#43a047" rx="2"/>
+    </g>
+    
+    <!-- Spoon (right) -->
+    <g transform="translate(90, 0)">
+      <rect x="-3" y="30" width="6" height="70" fill="#43a047" rx="3"/>
+      <ellipse cx="0" cy="20" rx="15" ry="20" fill="#43a047"/>
+    </g>
+  </g>
+  
+  <!-- Decorative line -->
+  <line x1="280" y1="480" x2="520" y2="480" stroke="#66bb6a" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+</svg>

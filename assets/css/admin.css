@@ -1,0 +1,57 @@
+/**
+ * Recipe Manager Admin Styles
+ *
+ * @package PLRecipeCookbook
+ */
+
+.recipe-meta-box {
+	padding: 10px 0;
+}
+
+.recipe-meta-box p {
+	margin-bottom: 20px;
+}
+
+.recipe-meta-box label {
+	display: inline-block;
+	margin-bottom: 8px;
+	font-weight: 600;
+	color: #23282d;
+}
+
+.recipe-meta-box input[type="number"],
+.recipe-meta-box select,
+.recipe-meta-box textarea {
+	padding: 8px 12px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	font-size: 14px;
+	transition: border-color 0.2s ease;
+}
+
+.recipe-meta-box input[type="number"]:focus,
+.recipe-meta-box select:focus,
+.recipe-meta-box textarea:focus {
+	border-color: #27ae60;
+	outline: none;
+	box-shadow: 0 0 0 1px #27ae60;
+}
+
+.recipe-meta-box textarea {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	line-height: 1.6;
+}
+
+.recipe-meta-box .widefat {
+	width: 100%;
+}
+
+/* Admin menu icon color */
+#adminmenu #menu-posts-pl_recipe .wp-menu-image:before {
+	color: #27ae60;
+}
+
+#adminmenu #menu-posts-pl_recipe:hover .wp-menu-image:before,
+#adminmenu #menu-posts-pl_recipe.wp-has-current-submenu .wp-menu-image:before {
+	color: #1e8449;
+}
