@@ -17,6 +17,8 @@ html {
 	max-width: 1600px;
 	margin: 0 auto;
 	padding: 40px 20px;
+	padding-left: 0;
+	padding-right: 0;
 }
 
 @media (min-width: 1920px) {
@@ -189,6 +191,18 @@ html {
 	color: #495057;
 }
 
+.recipe-content p {
+	margin-bottom: 1rem;
+}
+
+.recipe-content hr {
+	padding: 1rem 0;
+}
+
+.recipe-content .wp-block-embed iframe {
+	border-radius: 10px;
+}
+
 /* Ingredients & Instructions Sections */
 .recipe-details-wrapper {
 	display: flex;
@@ -244,8 +258,12 @@ html {
 	transform: rotate(-90deg);
 }
 
+.recipe-section-header.collapsed {
+	border-bottom-color: transparent;
+}
+
 .recipe-section-content {
-	max-height: 2000px;
+	max-height: unset;
 	overflow: hidden;
 	transition: max-height 0.4s ease;
 }
@@ -405,6 +423,7 @@ html {
 .recipe-categories,
 .recipe-tags {
 	margin-bottom: 15px;
+	padding: 0;
 }
 
 .recipe-categories:last-child,
@@ -547,6 +566,8 @@ html {
 	max-width: 1400px;
 	margin: 0 auto;
 	padding: 40px 20px;
+	padding-left: 0;
+	padding-right: 0;
 }
 
 .recipe-archive-header {
@@ -1628,7 +1649,7 @@ grid-template-columns: repeat(4, 1fr);
 	
 	/* Compact recipe tags */
 	.recipe-tags {
-		padding: 16px;
+		padding: 0;
 		margin-top: 20px;
 		border-radius: 6px;
 	}
