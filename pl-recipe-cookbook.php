@@ -70,6 +70,7 @@ class PL_Recipe_Manager {
 		add_action( 'wp_insert_post_data', array( $this, 'force_transliterate_slug' ), 10, 2 );
 		add_action( 'wp_ajax_pl_load_more_terms', array( $this, 'ajax_load_more_terms' ) );
 		add_action( 'wp_ajax_nopriv_pl_load_more_terms', array( $this, 'ajax_load_more_terms' ) );
+		add_filter( 'theme_page_templates', array( $this, 'register_recipe_search_template' ) );
 	}
 
 	/**
@@ -449,6 +450,19 @@ class PL_Recipe_Manager {
 		}
 
 		return $template;
+	}
+
+	/**
+	 * Register Recipe Search Template
+	 *
+	 * Makes the recipe search template available in the page template dropdown.
+	 *
+	 * @param array $templates Array of page templates.
+	 * @return array Modified templates array.
+	 */
+	public function register_recipe_search_template( $templates ) {
+		$templates['page-recipe-search.php'] = __( 'Recipe Search by Ingredients', 'pl-recipe-cookbook' );
+		return $templates;
 	}
 
 	/**
