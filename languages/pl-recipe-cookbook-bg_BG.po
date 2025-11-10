@@ -313,3 +313,104 @@ msgid "You might also like"
 msgstr "Може да харесате и"
 
 
+
+# Ingredient Search Page
+msgid "Намери Рецепта по Продукти"
+msgstr "Намери Рецепта по Продукти"
+
+msgid "Изберете продуктите, които имате и открийте вкусни рецепти, които можете да приготвите!"
+msgstr "Изберете продуктите, които имате и открийте вкусни рецепти, които можете да приготвите!"
+
+msgid "Избери Продукти"
+msgstr "Избери Продукти"
+
+msgid "Всички избрани (точно съвпадение)"
+msgstr "Всички избрани (точно съвпадение)"
+
+msgid "Поне една съставка"
+msgstr "Поне една съставка"
+
+msgid "Избрани:"
+msgstr "Избрани:"
+
+msgid "Все още няма избрани продукти"
+msgstr "Все още няма избрани продукти"
+
+msgid "Няма налични съставки."
+msgstr "Няма налични съставки."
+
+msgid "Резултати от Търсенето"
+msgstr "Резултати от Търсенето"
+
+msgid "Изберете продукти от ляво, за да намерите рецепти"
+msgstr "Изберете продукти от ляво, за да намерите рецепти"
+
+msgid "Зареди Още Рецепти"
+msgstr "Зареди Още Рецепти"
+
+msgid "Търсене на рецепти..."
+msgstr "Търсене на рецепти..."
+
+msgid "Грешка при зареждане на рецепти"
+msgstr "Грешка при зареждане на рецепти"
+
+msgid "Няма намерени рецепти с избраните продукти"
+msgstr "Няма намерени рецепти с избраните продукти"
+
+msgid "Зареждане..."
+msgstr "Зареждане..."
+
+msgid "намерени"
+msgstr "намерени"
+
+# Ingredient Search Page - Updated
+msgid "Find Recipe by Ingredients"
+msgstr "Намери Рецепта по Продукти"
+
+msgid "Select the ingredients you have and discover delicious recipes you can make!"
+msgstr "Изберете продуктите, които имате и открийте вкусни рецепти, които можете да приготвите!"
+
+msgid "Select Ingredients"
+msgstr "Избери Продукти"
+
+msgid "All selected (exact match)"
+msgstr "Всички избрани (точно съвпадение)"
+
+msgid "At least one ingredient"
+msgstr "Поне една съставка"
+
+msgid "Selected:"
+msgstr "Избрани:"
+
+msgid "No ingredients selected yet"
+msgstr "Все още няма избрани продукти"
+
+msgid "No ingredients available."
+msgstr "Няма налични съставки."
+
+msgid "Search Results"
+msgstr "Резултати от Търсенето"
+
+msgid "Select ingredients from the left to find recipes"
+msgstr "Изберете продукти от ляво, за да намерите рецепти"
+
+msgid "Load More Recipes"
+msgstr "Зареди Още Рецепти"
+
+msgid "Searching for recipes..."
+msgstr "Търсене на рецепти..."
+
+msgid "Error loading recipes"
+msgstr "Грешка при зареждане на рецепти"
+
+msgid "No recipes found with the selected ingredients"
+msgstr "Няма намерени рецепти с избраните продукти"
+
+msgid "Loading..."
+msgstr "Зареждане..."
+
+msgid "found"
+msgstr "намерени"
+
+msgid "Clear All"
+msgstr "Изчисти Всички"

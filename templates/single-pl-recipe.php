@@ -16,7 +16,16 @@ get_header();
 		$cook_time    = get_post_meta( get_the_ID(), '_pl_recipe_cook_time', true );
 		$servings     = get_post_meta( get_the_ID(), '_pl_recipe_servings', true );
 		$difficulty   = get_post_meta( get_the_ID(), '_pl_recipe_difficulty', true );
-		$ingredients  = get_post_meta( get_the_ID(), '_pl_recipe_ingredients', true );
+		
+		// Try to get ingredients from custom table first.
+		$db_ingredients = PL_Recipe_Database::get_recipe_ingredients( get_the_ID() );
+		
+		// Fallback to meta field if no custom table data.
+		$ingredients_meta = get_post_meta( get_the_ID(), '_pl_recipe_ingredients', true );
+		
+		// Set $ingredients variable for TOC checks.
+		$ingredients = ! empty( $db_ingredients ) || ! empty( $ingredients_meta );
+		
 		$instructions = get_post_meta( get_the_ID(), '_pl_recipe_instructions', true );
 		$categories   = get_the_terms( get_the_ID(), 'pl_recipe_cat' );
 		$tags         = get_the_terms( get_the_ID(), 'pl_recipe_tag' );
@@ -153,7 +162,7 @@ get_header();
 					<?php endif; ?>
 
 					<div class="recipe-details-wrapper">
-						<?php if ( $ingredients ) : ?>
+						<?php if ( ! empty( $db_ingredients ) || ! empty( $ingredients_meta ) ) : ?>
 							<div class="recipe-ingredients" id="ingredients">
 								<div class="recipe-section-header" onclick="toggleSection(this)">
 									<h2>
@@ -172,41 +181,94 @@ get_header();
 										</div>
 										<div id="ingredients-list">
 											<?php
-											$ingredients_array = explode( "\n", $ingredients );
-											$current_section = '';
-											
-											foreach ( $ingredients_array as $line ) {
-												$line = trim( $line );
-												if ( empty( $line ) ) {
-													continue;
+											// Use custom table data if available.
+											if ( ! empty( $db_ingredients ) ) {
+												// Group ingredients by section.
+												$grouped_ingredients = array();
+												foreach ( $db_ingredients as $ingredient ) {
+													$section = ! empty( $ingredient['section'] ) ? $ingredient['section'] : '';
+													if ( ! isset( $grouped_ingredients[ $section ] ) ) {
+														$grouped_ingredients[ $section ] = array();
+													}
+													$grouped_ingredients[ $section ][] = $ingredient;
 												}
 												
-												// Check if line is a section header [Section Name]
-												if ( preg_match( '/^\[(.+)\]$/', $line, $matches ) ) {
-													if ( $current_section ) {
-														echo '</ul></div>'; // Close previous section
-													}
-													$current_section = $matches[1];
+												// Display each section.
+												foreach ( $grouped_ingredients as $section => $section_ingredients ) {
 													echo '<div class="ingredients-section">';
-													echo '<h3 class="ingredients-section-title">' . esc_html( $current_section ) . '</h3>';
-													echo '<ul class="ingredients-list">';
-												} else {
-													// Regular ingredient
-													if ( ! $current_section ) {
-														// Start default section if none exists
-														$current_section = 'default';
-														echo '<div class="ingredients-section">';
-														echo '<ul class="ingredients-list">';
+													
+													if ( ! empty( $section ) ) {
+														echo '<h3 class="ingredients-section-title">' . esc_html( $section ) . '</h3>';
 													}
-													echo '<li>';
-													echo '<input type="checkbox" class="ingredient-checkbox" onchange="toggleIngredient(this)">';
-													echo '<span class="ingredient-text">' . esc_html( $line ) . '</span>';
-													echo '</li>';
+													
+													echo '<ul class="ingredients-list">';
+													
+													foreach ( $section_ingredients as $ingredient ) {
+														// Build ingredient text.
+														$ingredient_text = '';
+														if ( ! empty( $ingredient['raw_text'] ) ) {
+															$ingredient_text = $ingredient['raw_text'];
+														} else {
+															// Construct from parts.
+															$parts = array();
+															if ( ! empty( $ingredient['quantity'] ) ) {
+																$parts[] = $ingredient['quantity'];
+															}
+															if ( ! empty( $ingredient['unit'] ) ) {
+																$parts[] = $ingredient['unit'];
+															}
+															if ( ! empty( $ingredient['ingredient_name'] ) ) {
+																$parts[] = $ingredient['ingredient_name'];
+															}
+															$ingredient_text = implode( ' ', $parts );
+														}
+														
+														echo '<li>';
+														echo '<input type="checkbox" class="ingredient-checkbox" onchange="toggleIngredient(this)">';
+														echo '<span class="ingredient-text">' . esc_html( $ingredient_text ) . '</span>';
+														echo '</li>';
+													}
+													
+													echo '</ul></div>';
 												}
-											}
-											
-											if ( $current_section ) {
-												echo '</ul></div>'; // Close last section
+											} else {
+												// Fallback to meta field format.
+												$ingredients_array = explode( "\n", $ingredients_meta );
+												$current_section = '';
+												
+												foreach ( $ingredients_array as $line ) {
+													$line = trim( $line );
+													if ( empty( $line ) ) {
+														continue;
+													}
+													
+													// Check if line is a section header [Section Name].
+													if ( preg_match( '/^\[(.+)\]$/', $line, $matches ) ) {
+														if ( $current_section ) {
+															echo '</ul></div>'; // Close previous section.
+														}
+														$current_section = $matches[1];
+														echo '<div class="ingredients-section">';
+														echo '<h3 class="ingredients-section-title">' . esc_html( $current_section ) . '</h3>';
+														echo '<ul class="ingredients-list">';
+													} else {
+														// Regular ingredient.
+														if ( ! $current_section ) {
+															// Start default section if none exists.
+															$current_section = 'default';
+															echo '<div class="ingredients-section">';
+															echo '<ul class="ingredients-list">';
+														}
+														echo '<li>';
+														echo '<input type="checkbox" class="ingredient-checkbox" onchange="toggleIngredient(this)">';
+														echo '<span class="ingredient-text">' . esc_html( $line ) . '</span>';
+														echo '</li>';
+													}
+												}
+												
+												if ( $current_section ) {
+													echo '</ul></div>'; // Close last section.
+												}
 											}
 											?>
 										</div>
@@ -293,7 +355,7 @@ get_header();
 							<li><a href="#description" class="toc-link"><?php esc_html_e( 'Description', 'pl-recipe-cookbook' ); ?></a></li>
 						<?php endif; ?>
 						
-						<?php if ( $ingredients ) : ?>
+						<?php if ( ! empty( $db_ingredients ) || ! empty( $ingredients_meta ) ) : ?>
 							<li><a href="#ingredients" class="toc-link"><?php esc_html_e( 'Ingredients', 'pl-recipe-cookbook' ); ?></a></li>
 						<?php endif; ?>
 						

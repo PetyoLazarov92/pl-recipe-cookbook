@@ -54,6 +54,9 @@ class PL_Recipe_Manager {
 	 * Constructor
 	 */
 	private function __construct() {
+		// Load required files.
+		$this->load_dependencies();
+
 		add_action( 'plugins_loaded', array( $this, 'load_textdomain' ) );
 		add_action( 'init', array( $this, 'register_recipe_post_type' ) );
 		add_action( 'init', array( $this, 'register_recipe_taxonomies' ) );
@@ -67,6 +70,28 @@ class PL_Recipe_Manager {
 		add_action( 'wp_insert_post_data', array( $this, 'force_transliterate_slug' ), 10, 2 );
 		add_action( 'wp_ajax_pl_load_more_terms', array( $this, 'ajax_load_more_terms' ) );
 		add_action( 'wp_ajax_nopriv_pl_load_more_terms', array( $this, 'ajax_load_more_terms' ) );
+	}
+
+	/**
+	 * Load plugin dependencies
+	 *
+	 * @return void
+	 */
+	private function load_dependencies() {
+		// Database management.
+		require_once plugin_dir_path( __FILE__ ) . 'includes/class-database.php';
+
+		// Ingredient search functionality.
+		require_once plugin_dir_path( __FILE__ ) . 'includes/class-ingredient-search.php';
+
+		// Recipe display helpers (shortcodes and functions).
+		require_once plugin_dir_path( __FILE__ ) . 'includes/class-recipe-display-helpers.php';
+
+		// Admin classes.
+		if ( is_admin() ) {
+			require_once plugin_dir_path( __FILE__ ) . 'admin/class-ingredients-admin.php';
+			require_once plugin_dir_path( __FILE__ ) . 'admin/class-recipe-ingredients-meta.php';
+		}
 	}
 
 	/**
@@ -373,6 +398,28 @@ class PL_Recipe_Manager {
 	 * @return string Modified template path.
 	 */
 	public function recipe_template_loader( $template ) {
+		// Check for page templates.
+		if ( is_page() ) {
+			global $post;
+			$page_template = get_post_meta( $post->ID, '_wp_page_template', true );
+			
+			// Recipe search template.
+			if ( 'page-recipe-search.php' === $page_template ) {
+				$plugin_template = plugin_dir_path( __FILE__ ) . 'templates/page-recipe-search.php';
+				if ( file_exists( $plugin_template ) ) {
+					return $plugin_template;
+				}
+			}
+		}
+
+		// Check for slug-based template (page with slug 'nameri-recepta').
+		if ( is_page( 'nameri-recepta' ) ) {
+			$plugin_template = plugin_dir_path( __FILE__ ) . 'templates/page-recipe-search.php';
+			if ( file_exists( $plugin_template ) ) {
+				return $plugin_template;
+			}
+		}
+
 		if ( is_singular( 'pl_recipe' ) ) {
 			$plugin_template = plugin_dir_path( __FILE__ ) . 'templates/single-pl-recipe.php';
 			if ( file_exists( $plugin_template ) ) {
@@ -679,16 +726,28 @@ class PL_Recipe_Manager {
 PL_Recipe_Manager::get_instance();
 
 /**
- * Flush rewrite rules on plugin activation
+ * Plugin activation hook
  */
 function pl_recipe_manager_activate() {
+	// Load database class.
+	require_once plugin_dir_path( __FILE__ ) . 'includes/class-database.php';
+
+	// Initialize main plugin class.
 	PL_Recipe_Manager::get_instance();
+
+	// Create custom tables.
+	PL_Recipe_Database::create_tables();
+
+	// Import seed data.
+	PL_Recipe_Database::import_seed_data();
+
+	// Flush rewrite rules.
 	flush_rewrite_rules();
 }
 register_activation_hook( __FILE__, 'pl_recipe_manager_activate' );
 
 /**
- * Flush rewrite rules on plugin deactivation
+ * Plugin deactivation hook
  */
 function pl_recipe_manager_deactivate() {
 	flush_rewrite_rules();

@@ -1,0 +1,301 @@
+/**
+ * Admin Ingredients Management Styles
+ */
+
+.pl-ingredients-admin {
+	max-width: 1400px;
+}
+
+.pl-ingredients-admin h1 {
+	font-size: 1.8em;
+	margin-bottom: 20px;
+}
+
+/* Tabs */
+.nav-tab-wrapper {
+	border-bottom: 1px solid #ccd0d4;
+	margin: 20px 0;
+}
+
+.nav-tab {
+	border: 1px solid #ccd0d4;
+	border-bottom: none;
+	background: #f0f0f1;
+	color: #50575e;
+	padding: 8px 14px;
+	text-decoration: none;
+	margin-left: 0.5em;
+	border-radius: 2px 2px 0 0;
+	transition: all 0.2s;
+}
+
+.nav-tab:hover {
+	background: #fff;
+	color: #0073aa;
+}
+
+.nav-tab-active {
+	background: #fff;
+	border-bottom: 1px solid #fff;
+	color: #0073aa;
+	margin-bottom: -1px;
+}
+
+/* Notice Messages */
+.notice {
+	margin: 15px 0;
+	padding: 12px;
+	border-left: 4px solid #00a32a;
+	background: #fff;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+}
+
+.notice-success {
+	border-left-color: #00a32a;
+}
+
+.notice-error {
+	border-left-color: #d63638;
+}
+
+.notice-warning {
+	border-left-color: #dba617;
+}
+
+.notice-info {
+	border-left-color: #72aee6;
+}
+
+.notice p {
+	margin: 0.5em 0;
+	padding: 2px;
+}
+
+/* Forms */
+.form-table {
+	margin-top: 20px;
+}
+
+.form-table th {
+	padding: 15px 10px 15px 0;
+	text-align: left;
+	font-weight: 600;
+	width: 200px;
+}
+
+.form-table td {
+	padding: 15px 10px;
+}
+
+.form-table input[type="text"],
+.form-table input[type="number"],
+.form-table select,
+.form-table textarea {
+	width: 100%;
+	max-width: 400px;
+}
+
+.form-table textarea {
+	height: 100px;
+}
+
+/* Table Styles */
+.wp-list-table {
+	margin-top: 20px;
+	border: 1px solid #c3c4c7;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+}
+
+.wp-list-table th {
+	background: #f6f7f7;
+	border-bottom: 1px solid #c3c4c7;
+	font-weight: 600;
+}
+
+.wp-list-table tr:hover {
+	background: #f6f7f7;
+}
+
+.wp-list-table .row-actions {
+	color: #8c8f94;
+}
+
+.wp-list-table .row-actions span {
+	display: inline-block;
+}
+
+.wp-list-table .row-actions a {
+	color: #2271b1;
+	text-decoration: none;
+}
+
+.wp-list-table .row-actions a:hover {
+	color: #135e96;
+}
+
+.wp-list-table .row-actions .delete a {
+	color: #b32d2e;
+}
+
+.wp-list-table .row-actions .delete a:hover {
+	color: #8a2424;
+}
+
+/* Search and Filters */
+.tablenav {
+	margin: 20px 0;
+	padding: 10px 0;
+}
+
+.tablenav .actions {
+	display: inline-block;
+	margin-right: 10px;
+}
+
+.tablenav select {
+	max-width: 200px;
+}
+
+.search-box {
+	float: right;
+	margin-bottom: 10px;
+}
+
+.search-box input[type="search"] {
+	width: 280px;
+	margin: 0 4px 0 0;
+}
+
+/* Pagination */
+.tablenav-pages {
+	float: right;
+	margin: 0;
+	line-height: 2.5em;
+}
+
+.tablenav-pages .displaying-num {
+	color: #646970;
+	font-size: 13px;
+	font-style: italic;
+	margin-right: 10px;
+}
+
+.tablenav-pages a,
+.tablenav-pages span.current {
+	text-decoration: none;
+	padding: 5px 10px;
+	border: 1px solid #c3c4c7;
+	background: #fff;
+	color: #2271b1;
+	margin-left: 2px;
+	border-radius: 2px;
+	transition: all 0.2s;
+}
+
+.tablenav-pages a:hover {
+	background: #f6f7f7;
+	color: #135e96;
+}
+
+.tablenav-pages span.current {
+	background: #2271b1;
+	color: #fff;
+	border-color: #2271b1;
+}
+
+.tablenav-pages .disabled,
+.tablenav-pages .disabled:hover {
+	color: #c3c4c7;
+	cursor: default;
+	background: #fff;
+}
+
+/* Buttons */
+.button-primary {
+	background: #2271b1;
+	border-color: #2271b1;
+	color: #fff;
+	text-decoration: none;
+	text-shadow: none;
+	border-radius: 3px;
+	padding: 6px 14px;
+	font-size: 13px;
+	line-height: 2.15384615;
+	cursor: pointer;
+	transition: all 0.2s;
+}
+
+.button-primary:hover {
+	background: #135e96;
+	border-color: #135e96;
+	color: #fff;
+}
+
+.button {
+	border: 1px solid #2271b1;
+	color: #2271b1;
+	background: #f6f7f7;
+	padding: 6px 14px;
+	font-size: 13px;
+	line-height: 2.15384615;
+	border-radius: 3px;
+	cursor: pointer;
+	transition: all 0.2s;
+}
+
+.button:hover {
+	background: #fff;
+	border-color: #135e96;
+	color: #135e96;
+}
+
+/* Icon Picker */
+.icon-preview {
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	background: #f6f7f7;
+	border: 1px solid #c3c4c7;
+	border-radius: 4px;
+	font-size: 20px;
+	margin-left: 10px;
+	vertical-align: middle;
+}
+
+/* Responsive */
+@media (max-width: 782px) {
+	.form-table th,
+	.form-table td {
+		display: block;
+		width: 100%;
+		padding: 10px 0;
+	}
+	
+	.form-table th {
+		padding-bottom: 0;
+	}
+	
+	.form-table input[type="text"],
+	.form-table input[type="number"],
+	.form-table select,
+	.form-table textarea {
+		max-width: 100%;
+	}
+	
+	.search-box {
+		float: none;
+		margin-bottom: 10px;
+	}
+	
+	.search-box input[type="search"] {
+		width: 100%;
+	}
+	
+	.tablenav-pages {
+		float: none;
+		text-align: center;
+		margin-top: 10px;
+	}
+}
