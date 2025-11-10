@@ -71,7 +71,7 @@ class PL_Recipe_Database {
 				display_order INT DEFAULT 0,
 				created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
 				updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-				UNIQUE KEY idx_unique_pair (recipe_id, ingredient_id),
+				UNIQUE KEY idx_unique_triplet (recipe_id, ingredient_id, section),
 				KEY idx_search (ingredient_id, recipe_id),
 				KEY idx_recipe (recipe_id)
 			) $charset_collate"
@@ -125,6 +125,9 @@ class PL_Recipe_Database {
 
 		// Add notes and updated_at columns to existing tables if they don't exist.
 		self::add_missing_columns();
+		
+		// Update unique key to include section.
+		self::update_unique_key();
 	}
 
 	/**
@@ -245,6 +248,56 @@ class PL_Recipe_Database {
 		);
 
 		return $results ? $results : array();
+	}
+
+	/**
+	 * Update unique key to include section column
+	 *
+	 * @return void
+	 */
+	private static function update_unique_key() {
+		global $wpdb;
+		$prefix = $wpdb->prefix;
+		
+		// Check if old unique key exists.
+		$old_key = $wpdb->get_results(
+			$wpdb->prepare(
+				"SELECT CONSTRAINT_NAME 
+				FROM information_schema.TABLE_CONSTRAINTS 
+				WHERE TABLE_SCHEMA = DATABASE() 
+				AND TABLE_NAME = %s 
+				AND CONSTRAINT_NAME = 'idx_unique_pair'",
+				$prefix . 'pl_recipe_ingredients'
+			)
+		);
+		
+		if ( ! empty( $old_key ) ) {
+			// Drop old unique key.
+			$wpdb->query(
+				"ALTER TABLE {$prefix}pl_recipe_ingredients 
+				DROP INDEX idx_unique_pair"
+			);
+		}
+		
+		// Check if new unique key already exists.
+		$new_key = $wpdb->get_results(
+			$wpdb->prepare(
+				"SELECT CONSTRAINT_NAME 
+				FROM information_schema.TABLE_CONSTRAINTS 
+				WHERE TABLE_SCHEMA = DATABASE() 
+				AND TABLE_NAME = %s 
+				AND CONSTRAINT_NAME = 'idx_unique_triplet'",
+				$prefix . 'pl_recipe_ingredients'
+			)
+		);
+		
+		if ( empty( $new_key ) ) {
+			// Add new unique key with section.
+			$wpdb->query(
+				"ALTER TABLE {$prefix}pl_recipe_ingredients 
+				ADD UNIQUE KEY idx_unique_triplet (recipe_id, ingredient_id, section)"
+			);
+		}
 	}
 
 	/**

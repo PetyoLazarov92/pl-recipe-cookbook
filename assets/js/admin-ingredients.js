@@ -61,8 +61,9 @@
 
 			// Check if already added.
 			if ($(`#pl-ingredients-list tr[data-ingredient-id="${ingredientId}"]`).length > 0) {
-				alert('This ingredient is already added');
-				return;
+				if (!confirm('This ingredient is already added. Add again?')) {
+					return;
+				}
 			}
 
 			// Remove "no ingredients" message if present.

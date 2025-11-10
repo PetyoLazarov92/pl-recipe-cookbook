@@ -252,14 +252,19 @@ class PL_Recipe_Ingredients_Meta {
 
 		global $wpdb;
 
-		// Delete existing ingredients.
-		$wpdb->delete(
-			$wpdb->prefix . 'pl_recipe_ingredients',
-			array( 'recipe_id' => $post_id ),
-			array( '%d' )
+		// Get existing ingredients for this recipe.
+		$existing_ingredients = $wpdb->get_results(
+			$wpdb->prepare(
+				"SELECT id, ingredient_id, section FROM {$wpdb->prefix}pl_recipe_ingredients WHERE recipe_id = %d",
+				$post_id
+			),
+			OBJECT_K
 		);
 
-		// Add new ingredients.
+		// Track which existing records we've updated.
+		$updated_ids = array();
+
+		// Process new ingredients.
 		if ( isset( $_POST['pl_ingredients'] ) && is_array( $_POST['pl_ingredients'] ) ) {
 			foreach ( $_POST['pl_ingredients'] as $index => $ingredient ) {
 				$ingredient_id  = isset( $ingredient['id'] ) ? absint( $ingredient['id'] ) : 0;
@@ -269,31 +274,64 @@ class PL_Recipe_Ingredients_Meta {
 				$notes          = isset( $ingredient['notes'] ) ? sanitize_text_field( wp_unslash( $ingredient['notes'] ) ) : '';
 				$display_order  = isset( $ingredient['order'] ) ? absint( $ingredient['order'] ) : $index;
 
-				if ( $ingredient_id ) {
-					// Get ingredient name.
-					$ingredient_name = $wpdb->get_var(
-						$wpdb->prepare(
-							"SELECT name FROM {$wpdb->prefix}pl_ingredients WHERE id = %d",
-							$ingredient_id
-						)
-					);
+				if ( ! $ingredient_id ) {
+					continue;
+				}
 
-					// Build raw_text with quantity, unit and ingredient name.
-					$raw_text_parts = array();
-					if ( ! empty( $quantity ) ) {
-						$raw_text_parts[] = $quantity;
+				// Get ingredient name.
+				$ingredient_name = $wpdb->get_var(
+					$wpdb->prepare(
+						"SELECT name FROM {$wpdb->prefix}pl_ingredients WHERE id = %d",
+						$ingredient_id
+					)
+				);
+
+				// Build raw_text with quantity, unit and ingredient name.
+				$raw_text_parts = array();
+				if ( ! empty( $quantity ) ) {
+					$raw_text_parts[] = $quantity;
+				}
+				if ( ! empty( $unit ) ) {
+					$raw_text_parts[] = $unit;
+				}
+				if ( ! empty( $ingredient_name ) ) {
+					$raw_text_parts[] = $ingredient_name;
+				}
+				if ( ! empty( $notes ) ) {
+					$raw_text_parts[] = '(' . $notes . ')';
+				}
+				$raw_text = implode( ' ', $raw_text_parts );
+
+				// Check if this combination already exists (ingredient_id + section).
+				$existing_record = null;
+				foreach ( $existing_ingredients as $record ) {
+					if ( $record->ingredient_id == $ingredient_id && 
+						 $record->section === $section && 
+						 ! in_array( $record->id, $updated_ids ) ) {
+						$existing_record = $record;
+						break;
 					}
-					if ( ! empty( $unit ) ) {
-						$raw_text_parts[] = $unit;
-					}
-					if ( ! empty( $ingredient_name ) ) {
-						$raw_text_parts[] = $ingredient_name;
-					}
-					if ( ! empty( $notes ) ) {
-						$raw_text_parts[] = '(' . $notes . ')';
-					}
-					$raw_text = implode( ' ', $raw_text_parts );
-					
+				}
+
+				if ( $existing_record ) {
+					// Update existing record.
+					$wpdb->update(
+						$wpdb->prefix . 'pl_recipe_ingredients',
+						array(
+							'quantity'       => $quantity,
+							'unit'           => $unit,
+							'raw_text'       => $raw_text,
+							'notes'          => $notes,
+							'display_order'  => $display_order,
+							'updated_at'     => current_time( 'mysql' ),
+						),
+						array( 'id' => $existing_record->id ),
+						array( '%s', '%s', '%s', '%s', '%d', '%s' ),
+						array( '%d' )
+					);
+					$updated_ids[] = $existing_record->id;
+				} else {
+					// Insert new record.
 					$wpdb->insert(
 						$wpdb->prefix . 'pl_recipe_ingredients',
 						array(
@@ -305,8 +343,25 @@ class PL_Recipe_Ingredients_Meta {
 							'section'        => $section,
 							'notes'          => $notes,
 							'display_order'  => $display_order,
+							'updated_at'     => current_time( 'mysql' ),
 						),
-						array( '%d', '%d', '%s', '%s', '%s', '%s', '%s', '%d' )
+						array( '%d', '%d', '%s', '%s', '%s', '%s', '%s', '%d', '%s' )
+					);
+					if ( $wpdb->insert_id ) {
+						$updated_ids[] = $wpdb->insert_id;
+					}
+				}
+			}
+		}
+
+		// Delete records that weren't updated (removed ingredients).
+		if ( ! empty( $existing_ingredients ) ) {
+			foreach ( $existing_ingredients as $record ) {
+				if ( ! in_array( $record->id, $updated_ids ) ) {
+					$wpdb->delete(
+						$wpdb->prefix . 'pl_recipe_ingredients',
+						array( 'id' => $record->id ),
+						array( '%d' )
 					);
 				}
 			}
