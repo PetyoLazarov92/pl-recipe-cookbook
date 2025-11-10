@@ -144,7 +144,7 @@ class PL_Recipe_Manager {
 			'show_ui'            => true,
 			'show_in_menu'       => true,
 			'query_var'          => true,
-			'rewrite'            => array( 'slug' => 'pl-recipe' ),
+			'rewrite'            => array( 'slug' => 'recipe' ),
 			'capability_type'    => 'post',
 			'has_archive'        => true,
 			'hierarchical'       => false,
@@ -185,7 +185,7 @@ class PL_Recipe_Manager {
 				'show_ui'           => true,
 				'show_admin_column' => true,
 				'query_var'         => true,
-				'rewrite'           => array( 'slug' => 'pl-recipe-category' ),
+				'rewrite'           => array( 'slug' => 'recipe-category' ),
 				'show_in_rest'      => true,
 			)
 		);
@@ -216,7 +216,7 @@ class PL_Recipe_Manager {
 				'show_ui'           => true,
 				'show_admin_column' => true,
 				'query_var'         => true,
-				'rewrite'           => array( 'slug' => 'pl-recipe-tag' ),
+				'rewrite'           => array( 'slug' => 'recipe-tag' ),
 				'show_in_rest'      => true,
 			)
 		);
