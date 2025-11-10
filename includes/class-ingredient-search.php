@@ -41,14 +41,14 @@ class PL_Recipe_Ingredient_Search {
 			'pl-recipe-search',
 			plugin_dir_url( dirname( __FILE__ ) ) . 'assets/css/recipe-search.css',
 			array(),
-			'1.0.6'
+			'1.0.0'
 		);
 
 		wp_enqueue_script(
 			'pl-recipe-search',
 			plugin_dir_url( dirname( __FILE__ ) ) . 'assets/js/recipe-search.js',
 			array( 'jquery' ),
-			'1.0.5',
+			'1.0.0',
 			true
 		);
 
