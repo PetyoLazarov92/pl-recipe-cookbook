@@ -67,8 +67,10 @@ class PL_Recipe_Database {
 				unit VARCHAR(20) DEFAULT NULL,
 				raw_text VARCHAR(255) DEFAULT NULL,
 				section VARCHAR(100) DEFAULT NULL,
+				notes TEXT DEFAULT NULL,
 				display_order INT DEFAULT 0,
 				created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+				updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 				UNIQUE KEY idx_unique_pair (recipe_id, ingredient_id),
 				KEY idx_search (ingredient_id, recipe_id),
 				KEY idx_recipe (recipe_id)
@@ -118,6 +120,55 @@ class PL_Recipe_Database {
 				FOREIGN KEY (ingredient_id) 
 				REFERENCES {$prefix}pl_ingredients(id) 
 				ON DELETE CASCADE"
+			);
+		}
+
+		// Add notes and updated_at columns to existing tables if they don't exist.
+		self::add_missing_columns();
+	}
+
+	/**
+	 * Add missing columns to existing tables
+	 *
+	 * @return void
+	 */
+	private static function add_missing_columns() {
+		global $wpdb;
+		$prefix = $wpdb->prefix;
+
+		// Check if notes column exists.
+		$notes_exists = $wpdb->get_results(
+			$wpdb->prepare(
+				"SELECT COLUMN_NAME FROM information_schema.COLUMNS 
+				WHERE TABLE_SCHEMA = DATABASE() 
+				AND TABLE_NAME = %s 
+				AND COLUMN_NAME = 'notes'",
+				$prefix . 'pl_recipe_ingredients'
+			)
+		);
+
+		if ( empty( $notes_exists ) ) {
+			$wpdb->query(
+				"ALTER TABLE {$prefix}pl_recipe_ingredients 
+				ADD COLUMN notes TEXT DEFAULT NULL AFTER section"
+			);
+		}
+
+		// Check if updated_at column exists.
+		$updated_exists = $wpdb->get_results(
+			$wpdb->prepare(
+				"SELECT COLUMN_NAME FROM information_schema.COLUMNS 
+				WHERE TABLE_SCHEMA = DATABASE() 
+				AND TABLE_NAME = %s 
+				AND COLUMN_NAME = 'updated_at'",
+				$prefix . 'pl_recipe_ingredients'
+			)
+		);
+
+		if ( empty( $updated_exists ) ) {
+			$wpdb->query(
+				"ALTER TABLE {$prefix}pl_recipe_ingredients 
+				ADD COLUMN updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP AFTER created_at"
 			);
 		}
 	}
@@ -177,6 +228,7 @@ class PL_Recipe_Database {
 					ri.unit,
 					ri.raw_text,
 					ri.section,
+					ri.notes,
 					ri.display_order,
 					i.name as ingredient_name,
 					i.name_en as ingredient_name_en,

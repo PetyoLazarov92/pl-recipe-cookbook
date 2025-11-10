@@ -220,6 +220,10 @@ get_header();
 															if ( ! empty( $ingredient['ingredient_name'] ) ) {
 																$parts[] = $ingredient['ingredient_name'];
 															}
+															// Append notes if present.
+															if ( ! empty( $ingredient['notes'] ) ) {
+																$parts[] = '(' . $ingredient['notes'] . ')';
+															}
 															$ingredient_text = implode( ' ', $parts );
 														}
 														

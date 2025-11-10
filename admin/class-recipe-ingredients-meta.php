@@ -122,9 +122,10 @@ class PL_Recipe_Ingredients_Meta {
 						<tr>
 							<th style="width: 40px;"><?php esc_html_e( 'Order', 'pl-recipe-cookbook' ); ?></th>
 							<th><?php esc_html_e( 'Ingredient', 'pl-recipe-cookbook' ); ?></th>
-							<th style="width: 120px;"><?php esc_html_e( 'Quantity', 'pl-recipe-cookbook' ); ?></th>
-							<th style="width: 80px;"><?php esc_html_e( 'Unit', 'pl-recipe-cookbook' ); ?></th>
-							<th style="width: 150px;"><?php esc_html_e( 'Section', 'pl-recipe-cookbook' ); ?></th>
+							<th style="width: 100px;"><?php esc_html_e( 'Quantity', 'pl-recipe-cookbook' ); ?></th>
+							<th style="width: 70px;"><?php esc_html_e( 'Unit', 'pl-recipe-cookbook' ); ?></th>
+							<th style="width: 120px;"><?php esc_html_e( 'Section', 'pl-recipe-cookbook' ); ?></th>
+							<th style="width: 200px;"><?php esc_html_e( 'Notes', 'pl-recipe-cookbook' ); ?></th>
 							<th style="width: 80px;"><?php esc_html_e( 'Actions', 'pl-recipe-cookbook' ); ?></th>
 						</tr>
 					</thead>
@@ -156,13 +157,18 @@ class PL_Recipe_Ingredients_Meta {
 											   style="width: 100%;" placeholder="<?php esc_attr_e( 'Optional', 'pl-recipe-cookbook' ); ?>">
 									</td>
 									<td>
+										<input type="text" name="pl_ingredients[<?php echo esc_attr( $index ); ?>][notes]" 
+											   value="<?php echo esc_attr( $ingredient->notes ); ?>" 
+											   style="width: 100%;" placeholder="<?php esc_attr_e( 'Optional', 'pl-recipe-cookbook' ); ?>">
+									</td>
+									<td>
 										<button type="button" class="button pl-remove-ingredient"><?php esc_html_e( 'Remove', 'pl-recipe-cookbook' ); ?></button>
 									</td>
 								</tr>
 							<?php endforeach; ?>
 						<?php else : ?>
 							<tr class="pl-no-ingredients">
-								<td colspan="6" style="text-align: center; color: #666;">
+								<td colspan="7" style="text-align: center; color: #666;">
 									<?php esc_html_e( 'No ingredients added yet.', 'pl-recipe-cookbook' ); ?>
 								</td>
 							</tr>
@@ -260,6 +266,7 @@ class PL_Recipe_Ingredients_Meta {
 				$quantity       = isset( $ingredient['quantity'] ) ? sanitize_text_field( wp_unslash( $ingredient['quantity'] ) ) : '';
 				$unit           = isset( $ingredient['unit'] ) ? sanitize_text_field( wp_unslash( $ingredient['unit'] ) ) : '';
 				$section        = isset( $ingredient['section'] ) ? sanitize_text_field( wp_unslash( $ingredient['section'] ) ) : '';
+				$notes          = isset( $ingredient['notes'] ) ? sanitize_text_field( wp_unslash( $ingredient['notes'] ) ) : '';
 				$display_order  = isset( $ingredient['order'] ) ? absint( $ingredient['order'] ) : $index;
 
 				if ( $ingredient_id ) {
@@ -282,6 +289,9 @@ class PL_Recipe_Ingredients_Meta {
 					if ( ! empty( $ingredient_name ) ) {
 						$raw_text_parts[] = $ingredient_name;
 					}
+					if ( ! empty( $notes ) ) {
+						$raw_text_parts[] = '(' . $notes . ')';
+					}
 					$raw_text = implode( ' ', $raw_text_parts );
 					
 					$wpdb->insert(
@@ -293,9 +303,10 @@ class PL_Recipe_Ingredients_Meta {
 							'unit'           => $unit,
 							'raw_text'       => $raw_text,
 							'section'        => $section,
+							'notes'          => $notes,
 							'display_order'  => $display_order,
 						),
-						array( '%d', '%d', '%s', '%s', '%s', '%s', '%d' )
+						array( '%d', '%d', '%s', '%s', '%s', '%s', '%s', '%d' )
 					);
 				}
 			}

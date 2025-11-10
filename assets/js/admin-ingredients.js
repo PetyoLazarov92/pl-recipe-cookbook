@@ -90,6 +90,10 @@
 							   style="width: 100%;" placeholder="Optional">
 					</td>
 					<td>
+						<input type="text" name="pl_ingredients[${ingredientCounter}][notes]" 
+							   style="width: 100%;" placeholder="Optional">
+					</td>
+					<td>
 						<button type="button" class="button pl-remove-ingredient">Remove</button>
 					</td>
 				</tr>
@@ -112,7 +116,7 @@
 			if ($('#pl-ingredients-list tr').length === 0) {
 				$('#pl-ingredients-list').html(`
 					<tr class="pl-no-ingredients">
-						<td colspan="6" style="text-align: center; color: #666;">
+						<td colspan="7" style="text-align: center; color: #666;">
 							No ingredients added yet.
 						</td>
 					</tr>

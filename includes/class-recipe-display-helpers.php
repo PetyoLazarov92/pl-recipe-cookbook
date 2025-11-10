@@ -139,6 +139,9 @@ class PL_Recipe_Display_Helpers {
 		if ( ! empty( $ingredient['ingredient_name'] ) ) {
 			$parts[] = $ingredient['ingredient_name'];
 		}
+		if ( ! empty( $ingredient['notes'] ) ) {
+			$parts[] = '(' . $ingredient['notes'] . ')';
+		}
 
 		return implode( ' ', $parts );
 	}

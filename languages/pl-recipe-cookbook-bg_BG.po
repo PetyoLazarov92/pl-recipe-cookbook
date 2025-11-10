@@ -414,3 +414,6 @@ msgstr "намерени"
 
 msgid "Clear All"
 msgstr "Изчисти Всички"
+
+msgid "Notes"
+msgstr "Бележки"
