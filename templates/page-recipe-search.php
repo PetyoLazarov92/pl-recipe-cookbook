@@ -50,7 +50,7 @@ $categories = PL_Recipe_Ingredient_Search::get_categories_with_ingredients();
 							<p class="no-selection"><?php esc_html_e( 'No ingredients selected yet', 'pl-recipe-cookbook' ); ?></p>
 						</div>
 					</div>
-					<button type="button" class="widget-toggle" data-expanded="false" style="display: none;">
+					<button type="button" class="widget-toggle" data-expanded="false" style="visibility: hidden;">
 						<?php esc_html_e( 'Show More', 'pl-recipe-cookbook' ); ?>
 					</button>
 				</div>
