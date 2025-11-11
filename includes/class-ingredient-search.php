@@ -66,6 +66,8 @@ class PL_Recipe_Ingredient_Search {
 					'noRecipesFound'  => __( 'No recipes found with the selected ingredients', 'pl-recipe-cookbook' ),
 					'loading'         => __( 'Loading...', 'pl-recipe-cookbook' ),
 					'found'           => __( 'found', 'pl-recipe-cookbook' ),
+					'showMore'        => __( 'Show More', 'pl-recipe-cookbook' ),
+					'hide'            => __( 'Hide', 'pl-recipe-cookbook' ),
 				),
 			)
 		);

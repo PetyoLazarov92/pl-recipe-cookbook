@@ -136,6 +136,24 @@
 					$list.slideDown(200);
 				}
 			});
+
+			// Selected ingredients widget toggle
+			$(document).on('click', '.selected-ingredients-widget .widget-toggle', function() {
+				const $widget = $(this).closest('.selected-ingredients-widget');
+				const $content = $widget.find('.widget-content');
+				const $btn = $(this);
+				const isExpanded = $btn.attr('data-expanded') === 'true';
+
+				if (isExpanded) {
+					$content.removeClass('expanded');
+					$btn.attr('data-expanded', 'false')
+						.text(plRecipeSearch.i18n.showMore);
+				} else {
+					$content.addClass('expanded');
+					$btn.attr('data-expanded', 'true')
+						.text(plRecipeSearch.i18n.hide);
+				}
+			});
 		}
 
 		handleIngredientChange(e) {
@@ -190,6 +208,7 @@
 		updateSelectedDisplay() {
 			const $container = $('#selected-ingredients');
 			const $clearBtn = $('#clear-all-btn');
+			const $toggleBtn = $('.selected-ingredients-widget .widget-toggle');
 			const count = this.selectedIngredients.length;
 
 			$('#selected-count').text(count);
@@ -197,6 +216,7 @@
 			if (count === 0) {
 				$container.html(`<p class="no-selection">${plRecipeSearch.i18n.noSelection}</p>`);
 				$clearBtn.hide();
+				$toggleBtn.hide();
 				return;
 			}
 
@@ -212,6 +232,17 @@
 
 			$container.html(html);
 			$clearBtn.show();
+
+			// Show toggle button if content height exceeds collapsed height
+			setTimeout(() => {
+			    const $content = $('.selected-ingredients-widget .widget-content');
+			    const contentHeight = $content[0].scrollHeight;
+			    if (contentHeight > 80) {
+			        $toggleBtn.show();
+			    } else {
+			        $toggleBtn.hide();
+			    }
+			}, 50);
 		}
 
 		/**

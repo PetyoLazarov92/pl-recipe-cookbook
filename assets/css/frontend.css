@@ -485,6 +485,7 @@ html {
 
 /* Sidebar widgets with fade transition */
 .recipe-sidebar-widgets {
+	border-radius: 12px;
 	transition: opacity 0.3s ease-out, max-height 0.3s ease-out;
 }
 

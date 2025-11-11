@@ -37,6 +37,25 @@ $categories = PL_Recipe_Ingredient_Search::get_categories_with_ingredients();
 
 		<div class="recipe-search-main">
 			<aside class="recipe-search-sidebar">
+				 <!-- Selected Ingredients Display (First) -->
+				<div class="selected-ingredients-widget">
+					<div class="widget-header">
+						<h3><?php esc_html_e( 'Selected:', 'pl-recipe-cookbook' ); ?> <span id="selected-count">0</span></h3>
+						<button type="button" id="clear-all-btn" class="clear-all-button" style="display: none;">
+							<?php esc_html_e( 'Clear All', 'pl-recipe-cookbook' ); ?>
+						</button>
+					</div>
+					<div class="widget-content">
+						<div id="selected-ingredients" class="selected-ingredients-list">
+							<p class="no-selection"><?php esc_html_e( 'No ingredients selected yet', 'pl-recipe-cookbook' ); ?></p>
+						</div>
+					</div>
+					<button type="button" class="widget-toggle" data-expanded="false" style="display: none;">
+						<?php esc_html_e( 'Show More', 'pl-recipe-cookbook' ); ?>
+					</button>
+				</div>
+
+				<!-- Ingredient Selection Filters -->
 				<div class="search-filters">
 					<h2><?php esc_html_e( 'Select Ingredients', 'pl-recipe-cookbook' ); ?></h2>
 
@@ -52,19 +71,6 @@ $categories = PL_Recipe_Ingredient_Search::get_categories_with_ingredients();
 							<span class="radio-custom"></span>
 							<span class="radio-label"><?php esc_html_e( 'At least one ingredient', 'pl-recipe-cookbook' ); ?></span>
 						</label>
-					</div>
-
-					<!-- Selected Ingredients Display -->
-					<div class="selected-ingredients-container">
-						<div class="selected-header">
-							<h3><?php esc_html_e( 'Selected:', 'pl-recipe-cookbook' ); ?> <span id="selected-count">0</span></h3>
-							<button type="button" id="clear-all-btn" class="clear-all-button" style="display: none;">
-								<?php esc_html_e( 'Clear All', 'pl-recipe-cookbook' ); ?>
-							</button>
-						</div>
-						<div id="selected-ingredients" class="selected-ingredients-list">
-							<p class="no-selection"><?php esc_html_e( 'No ingredients selected yet', 'pl-recipe-cookbook' ); ?></p>
-						</div>
 					</div>
 
 					<!-- Categories with Ingredients -->
