@@ -1,16 +1,18 @@
+# Copyright (C) 2025 Plazarov
+# This file is distributed under the GPL v2 or later.
 msgid ""
 msgstr ""
 "Project-Id-Version: PL Recipe Cookbook 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/pl-recipe-cookbook\n"
-"Last-Translator: Plazarov\n"
-"Language-Team: Bulgarian\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-11-11T00:40:46+00:00\n"
-"PO-Revision-Date: 2024-11-08 14:00:00+0000\n"
-"Language: bg_BG\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"POT-Creation-Date: 2025-11-11T00:48:41+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.11.0\n"
+"X-Domain: pl-recipe-cookbook\n"
 
 #. Plugin Name of the plugin
 #: pl-recipe-cookbook.php
@@ -54,15 +56,13 @@ msgid "Ingredient updated successfully."
 msgstr ""
 
 #: admin/class-ingredients-admin.php:86
-#, fuzzy
 msgid "Ingredient deleted successfully."
-msgstr "Все още няма избрани продукти"
+msgstr ""
 
 #: admin/class-ingredients-admin.php:107
 #: admin/class-ingredients-admin.php:127
-#, fuzzy
 msgid "Manage Ingredients"
-msgstr "Продукти"
+msgstr ""
 
 #: admin/class-ingredients-admin.php:108
 #: admin/class-ingredients-admin.php:136
@@ -72,7 +72,7 @@ msgstr "Продукти"
 #: templates/single-pl-recipe.php:170
 #: templates/single-pl-recipe.php:371
 msgid "Ingredients"
-msgstr "Продукти"
+msgstr ""
 
 #: admin/class-ingredients-admin.php:132
 #: pl-recipe-cookbook.php:180
@@ -80,17 +80,15 @@ msgstr "Продукти"
 #: templates/taxonomy-pl_recipe_cat.php:100
 #: templates/taxonomy-pl_recipe_tag.php:100
 msgid "Categories"
-msgstr "Категории"
+msgstr ""
 
 #: admin/class-ingredients-admin.php:188
-#, fuzzy
 msgid "Edit Category"
-msgstr "Редактирай категория"
+msgstr ""
 
 #: admin/class-ingredients-admin.php:188
-#, fuzzy
 msgid "Add New Category"
-msgstr "Добави нова категория"
+msgstr ""
 
 #: admin/class-ingredients-admin.php:198
 #: admin/class-ingredients-admin.php:344
@@ -118,17 +116,15 @@ msgstr ""
 #: templates/single-pl-recipe.php:157
 #: templates/single-pl-recipe.php:367
 msgid "Description"
-msgstr "Описание"
+msgstr ""
 
 #: admin/class-ingredients-admin.php:227
-#, fuzzy
 msgid "Update Category"
-msgstr "Обнови категория"
+msgstr ""
 
 #: admin/class-ingredients-admin.php:227
-#, fuzzy
 msgid "Add Category"
-msgstr "Категория"
+msgstr ""
 
 #: admin/class-ingredients-admin.php:231
 #: admin/class-ingredients-admin.php:367
@@ -153,9 +149,8 @@ msgstr ""
 #: admin/class-ingredients-admin.php:253
 #: admin/class-ingredients-admin.php:443
 #: admin/class-recipe-ingredients-meta.php:129
-#, fuzzy
 msgid "Actions"
-msgstr "Инструкции"
+msgstr ""
 
 #: admin/class-ingredients-admin.php:275
 #: admin/class-ingredients-admin.php:465
@@ -172,83 +167,71 @@ msgid "Delete"
 msgstr ""
 
 #: admin/class-ingredients-admin.php:287
-#, fuzzy
 msgid "No categories found."
-msgstr "Няма намерени рецепти."
+msgstr ""
 
 #: admin/class-ingredients-admin.php:321
-#, fuzzy
 msgid "Edit Ingredient"
-msgstr "Продукти"
+msgstr ""
 
 #: admin/class-ingredients-admin.php:321
-#, fuzzy
 msgid "Add New Ingredient"
-msgstr "Продукти"
+msgstr ""
 
 #: admin/class-ingredients-admin.php:331
 #: admin/class-ingredients-admin.php:440
 #: templates/taxonomy-pl_recipe_cat.php:18
 msgid "Category"
-msgstr "Категория"
+msgstr ""
 
 #: admin/class-ingredients-admin.php:333
-#, fuzzy
 msgid "Select Category"
-msgstr "Категория рецепти"
+msgstr ""
 
 #: admin/class-ingredients-admin.php:363
-#, fuzzy
 msgid "Update Ingredient"
-msgstr "Продукти"
+msgstr ""
 
 #: admin/class-ingredients-admin.php:363
 #: admin/class-recipe-ingredients-meta.php:114
-#, fuzzy
 msgid "Add Ingredient"
-msgstr "Продукти"
+msgstr ""
 
 #: admin/class-ingredients-admin.php:417
-#, fuzzy
 msgid "Search:"
-msgstr "Търси"
+msgstr ""
 
 #: admin/class-ingredients-admin.php:418
-#, fuzzy
 msgid "Search ingredients..."
-msgstr "Търсене на рецепти..."
+msgstr ""
 
 #: admin/class-ingredients-admin.php:420
-#, fuzzy
 msgid "Category:"
-msgstr "Категория"
+msgstr ""
 
 #: admin/class-ingredients-admin.php:422
 msgid "All Categories"
-msgstr "Всички категории"
+msgstr ""
 
 #: admin/class-ingredients-admin.php:430
-#, fuzzy
 msgid "Filter"
-msgstr "Филтрирай по:"
+msgstr ""
 
 #: admin/class-ingredients-admin.php:431
 msgid "Reset"
 msgstr ""
 
 #: admin/class-ingredients-admin.php:442
-#, fuzzy
 msgid "Used in Recipes"
-msgstr "Редактирай рецепта"
+msgstr ""
 
 #: admin/class-ingredients-admin.php:469
 msgid "Are you sure?"
 msgstr ""
 
 #: admin/class-ingredients-admin.php:477
-#, fuzzy
 msgid "No ingredients found."
-msgstr "Няма намерени рецепти."
+msgstr ""
 
 #. translators: %s: Number of items.
 #: admin/class-ingredients-admin.php:490
@@ -273,42 +256,36 @@ msgid "Invalid category"
 msgstr ""
 
 #: admin/class-recipe-ingredients-meta.php:51
-#, fuzzy
 msgid "Recipe Ingredients (for search)"
-msgstr "Намери Рецепта по Продукти"
+msgstr ""
 
 #: admin/class-recipe-ingredients-meta.php:90
 msgid "Select ingredients used in this recipe. This is used for the ingredient search functionality on the frontend."
 msgstr ""
 
 #: admin/class-recipe-ingredients-meta.php:96
-#, fuzzy
 msgid "Select Category:"
-msgstr "Категория рецепти"
+msgstr ""
 
 #: admin/class-recipe-ingredients-meta.php:98
-#, fuzzy
 msgid "-- Select Category --"
-msgstr "Категория рецепти"
+msgstr ""
 
 #: admin/class-recipe-ingredients-meta.php:107
-#, fuzzy
 msgid "Select Ingredient:"
-msgstr "Избери Продукти"
+msgstr ""
 
 #: admin/class-recipe-ingredients-meta.php:109
 msgid "-- Select category first --"
 msgstr ""
 
 #: admin/class-recipe-ingredients-meta.php:119
-#, fuzzy
 msgid "Selected Ingredients:"
-msgstr "Избери Продукти"
+msgstr ""
 
 #: admin/class-recipe-ingredients-meta.php:124
-#, fuzzy
 msgid "Ingredient"
-msgstr "Продукти"
+msgstr ""
 
 #: admin/class-recipe-ingredients-meta.php:125
 msgid "Quantity"
@@ -319,13 +296,12 @@ msgid "Unit"
 msgstr ""
 
 #: admin/class-recipe-ingredients-meta.php:127
-#, fuzzy
 msgid "Section"
-msgstr "Описание"
+msgstr ""
 
 #: admin/class-recipe-ingredients-meta.php:128
 msgid "Notes"
-msgstr "Бележки"
+msgstr ""
 
 #: admin/class-recipe-ingredients-meta.php:157
 #: admin/class-recipe-ingredients-meta.php:162
@@ -337,31 +313,30 @@ msgid "Remove"
 msgstr ""
 
 #: admin/class-recipe-ingredients-meta.php:172
-#, fuzzy
 msgid "No ingredients added yet."
-msgstr "Все още няма избрани продукти"
+msgstr ""
 
 #: includes/class-ingredient-search.php:62
 #: templates/page-recipe-search.php:66
 msgid "No ingredients selected yet"
-msgstr "Все още няма избрани продукти"
+msgstr ""
 
 #: includes/class-ingredient-search.php:63
 msgid "Searching for recipes..."
-msgstr "Търсене на рецепти..."
+msgstr ""
 
 #: includes/class-ingredient-search.php:64
 msgid "Error loading recipes"
-msgstr "Грешка при зареждане на рецепти"
+msgstr ""
 
 #: includes/class-ingredient-search.php:65
 #: templates/page-recipe-search.php:111
 msgid "Select ingredients from the left to find recipes"
-msgstr "Изберете продукти от ляво, за да намерите рецепти"
+msgstr ""
 
 #: includes/class-ingredient-search.php:66
 msgid "No recipes found with the selected ingredients"
-msgstr "Няма намерени рецепти с избраните продукти"
+msgstr ""
 
 #: includes/class-ingredient-search.php:67
 #: templates/archive-pl-recipe.php:131
@@ -371,16 +346,15 @@ msgstr "Няма намерени рецепти с избраните прод�
 #: templates/taxonomy-pl_recipe_tag.php:126
 #: templates/taxonomy-pl_recipe_tag.php:163
 msgid "Loading..."
-msgstr "Зареждане..."
+msgstr ""
 
 #: includes/class-ingredient-search.php:68
 msgid "found"
-msgstr "намерени"
+msgstr ""
 
 #: includes/class-ingredient-search.php:103
-#, fuzzy
 msgid "Please select at least one ingredient."
-msgstr "Поне една съставка"
+msgstr ""
 
 #: includes/class-ingredient-search.php:234
 #: includes/class-recipe-display-helpers.php:368
@@ -391,7 +365,7 @@ msgstr "Поне една съставка"
 #: templates/taxonomy-pl_recipe_cat.php:212
 #: templates/taxonomy-pl_recipe_tag.php:212
 msgid "Easy"
-msgstr "Лесна"
+msgstr ""
 
 #: includes/class-ingredient-search.php:235
 #: includes/class-recipe-display-helpers.php:369
@@ -402,7 +376,7 @@ msgstr "Лесна"
 #: templates/taxonomy-pl_recipe_cat.php:213
 #: templates/taxonomy-pl_recipe_tag.php:213
 msgid "Medium"
-msgstr "Средна"
+msgstr ""
 
 #: includes/class-ingredient-search.php:236
 #: includes/class-recipe-display-helpers.php:370
@@ -413,7 +387,7 @@ msgstr "Средна"
 #: templates/taxonomy-pl_recipe_cat.php:214
 #: templates/taxonomy-pl_recipe_tag.php:214
 msgid "Hard"
-msgstr "Трудна"
+msgstr ""
 
 #: includes/class-ingredient-search.php:264
 #: includes/class-recipe-display-helpers.php:348
@@ -426,434 +400,432 @@ msgstr "Трудна"
 #: templates/taxonomy-pl_recipe_cat.php:236
 #: templates/taxonomy-pl_recipe_tag.php:236
 msgid "min"
-msgstr "мин"
+msgstr ""
 
 #: includes/class-ingredient-search.php:270
 #: templates/archive-pl-recipe.php:233
 #: templates/taxonomy-pl_recipe_cat.php:242
 #: templates/taxonomy-pl_recipe_tag.php:242
 msgid "servings"
-msgstr "порции"
+msgstr ""
 
 #: includes/class-recipe-display-helpers.php:301
 #: templates/single-pl-recipe.php:144
 #: templates/single-pl-recipe.php:289
 #: templates/single-pl-recipe.php:375
 msgid "Instructions"
-msgstr "Инструкции"
+msgstr ""
 
 #: includes/class-recipe-display-helpers.php:347
 #: templates/single-pl-recipe.php:62
 msgid "Prep Time:"
-msgstr "Подготовка:"
+msgstr ""
 
 #: includes/class-recipe-display-helpers.php:354
 #: templates/single-pl-recipe.php:74
 msgid "Cook Time:"
-msgstr "Готвене:"
+msgstr ""
 
 #: includes/class-recipe-display-helpers.php:361
 #: pl-recipe-cookbook.php:268
 #: templates/single-pl-recipe.php:98
 msgid "Servings:"
-msgstr "Порции:"
+msgstr ""
 
 #: includes/class-recipe-display-helpers.php:375
 #: pl-recipe-cookbook.php:272
 #: templates/single-pl-recipe.php:117
 msgid "Difficulty:"
-msgstr "Трудност:"
+msgstr ""
 
 #: includes/class-recipe-widgets.php:38
 msgid "Recipe Sidebar"
-msgstr "Странична Лента за Рецепти"
+msgstr ""
 
 #: includes/class-recipe-widgets.php:40
 msgid "Widget area displayed below the table of contents on single recipe pages."
-msgstr "Област за уиджети, показвана под съдържанието на единични страници с рецепти."
+msgstr ""
 
 #: includes/class-recipe-widgets.php:72
 #: includes/class-recipe-widgets.php:89
 #: includes/class-recipe-widgets.php:201
 msgid "Cooking Helper"
-msgstr "Кулинарен Помощник"
+msgstr ""
 
 #: includes/class-recipe-widgets.php:74
 msgid "Displays a reference guide for cooking measurements and abbreviations."
-msgstr "Показва справочник за кулинарни мерки и съкращения."
+msgstr ""
 
 #: includes/class-recipe-widgets.php:126
 msgid "Full List"
-msgstr "Пълен списък"
+msgstr ""
 
 #: includes/class-recipe-widgets.php:131
 msgid "Show More"
-msgstr "Покажи още"
+msgstr ""
 
 #: includes/class-recipe-widgets.php:132
 msgid "Show Less"
-msgstr "Скрий"
+msgstr ""
 
 #. translators: Tea cup abbreviation
 #: includes/class-recipe-widgets.php:151
 msgid "c.c."
-msgstr "ч.ч."
+msgstr ""
 
 #. translators: Tea cup full name
 #: includes/class-recipe-widgets.php:153
 msgid "tea cup (250 ml)"
-msgstr "чаена чаша (250 мл)"
+msgstr ""
 
 #. translators: Tablespoon abbreviation
 #: includes/class-recipe-widgets.php:157
 msgid "tbsp"
-msgstr "с.л."
+msgstr ""
 
 #. translators: Tablespoon full name
 #: includes/class-recipe-widgets.php:159
 msgid "tablespoon (15 ml)"
-msgstr "супена лъжица (15 мл)"
+msgstr ""
 
 #. translators: Teaspoon abbreviation
 #: includes/class-recipe-widgets.php:163
 msgid "tsp"
-msgstr "ч.л."
+msgstr ""
 
 #. translators: Teaspoon full name
 #: includes/class-recipe-widgets.php:165
 msgid "teaspoon (5 ml)"
-msgstr "чаена лъжица (5 мл)"
+msgstr ""
 
 #. translators: Pinch abbreviation
 #: includes/class-recipe-widgets.php:169
 msgctxt "cooking measurement abbr"
 msgid "pinch"
-msgstr "щ."
+msgstr ""
 
 #. translators: Pinch full name
 #: includes/class-recipe-widgets.php:171
 msgctxt "cooking measurement name"
 msgid "pinch"
-msgstr "щипка"
+msgstr ""
 
 #. translators: Piece abbreviation
 #: includes/class-recipe-widgets.php:175
 msgid "pc"
-msgstr "бр."
+msgstr ""
 
 #. translators: Piece full name
 #: includes/class-recipe-widgets.php:177
 msgid "piece"
-msgstr "брой"
+msgstr ""
 
 #. translators: Kilogram abbreviation
 #: includes/class-recipe-widgets.php:181
 msgid "kg"
-msgstr "кг"
+msgstr ""
 
 #. translators: Kilogram full name
 #: includes/class-recipe-widgets.php:183
 msgid "kilogram"
-msgstr "килограм"
+msgstr ""
 
 #. translators: Gram abbreviation
 #: includes/class-recipe-widgets.php:187
 msgid "g"
-msgstr "г"
+msgstr ""
 
 #. translators: Gram full name
 #: includes/class-recipe-widgets.php:189
 msgid "gram"
-msgstr "грам"
+msgstr ""
 
 #: includes/class-recipe-widgets.php:207
 msgid "Title:"
-msgstr "Заглавие:"
+msgstr ""
 
 #: includes/class-recipe-widgets.php:219
 msgid "Description:"
-msgstr "Описание:"
+msgstr ""
 
 #: includes/class-recipe-widgets.php:230
 msgid "Full List Page:"
-msgstr "Страница с пълен списък:"
+msgstr ""
 
 #: includes/class-recipe-widgets.php:238
 msgid "— Select —"
-msgstr "— Избери —"
+msgstr ""
 
 #: pl-recipe-cookbook.php:118
 msgctxt "Post type general name"
 msgid "Recipes"
-msgstr "Рецепти"
+msgstr ""
 
 #: pl-recipe-cookbook.php:119
 msgctxt "Post type singular name"
 msgid "Recipe"
-msgstr "Рецепта"
+msgstr ""
 
 #: pl-recipe-cookbook.php:120
 msgctxt "Admin Menu text"
 msgid "Recipes"
-msgstr "Рецепти"
+msgstr ""
 
 #: pl-recipe-cookbook.php:121
 msgctxt "Add New on Toolbar"
 msgid "Recipe"
-msgstr "Рецепта"
+msgstr ""
 
 #: pl-recipe-cookbook.php:122
 msgid "Add New"
-msgstr "Добави нова"
+msgstr ""
 
 #: pl-recipe-cookbook.php:123
 msgid "Add New Recipe"
-msgstr "Добави нова рецепта"
+msgstr ""
 
 #: pl-recipe-cookbook.php:124
 msgid "New Recipe"
-msgstr "Нова рецепта"
+msgstr ""
 
 #: pl-recipe-cookbook.php:125
 msgid "Edit Recipe"
-msgstr "Редактирай рецепта"
+msgstr ""
 
 #: pl-recipe-cookbook.php:126
 msgid "View Recipe"
-msgstr "Виж рецепта"
+msgstr ""
 
 #: pl-recipe-cookbook.php:127
 #: templates/archive-pl-recipe.php:15
 msgid "All Recipes"
-msgstr "Всички рецепти"
+msgstr ""
 
 #: pl-recipe-cookbook.php:128
 msgid "Search Recipes"
-msgstr "Търси рецепти"
+msgstr ""
 
 #: pl-recipe-cookbook.php:129
 msgid "Parent Recipes:"
-msgstr "Родителски рецепти:"
+msgstr ""
 
 #: pl-recipe-cookbook.php:130
 #: templates/archive-pl-recipe.php:258
 msgid "No recipes found."
-msgstr "Няма намерени рецепти."
+msgstr ""
 
 #: pl-recipe-cookbook.php:131
 msgid "No recipes found in Trash."
-msgstr "Няма намерени рецепти в кошчето."
+msgstr ""
 
 #: pl-recipe-cookbook.php:132
 msgctxt "Overrides the \"Featured Image\" phrase"
 msgid "Recipe Image"
-msgstr "Снимка на рецептата"
+msgstr ""
 
 #: pl-recipe-cookbook.php:133
 msgctxt "Overrides the \"Set featured image\" phrase"
 msgid "Set recipe image"
-msgstr "Задай снимка на рецептата"
+msgstr ""
 
 #: pl-recipe-cookbook.php:134
 msgctxt "Overrides the \"Remove featured image\" phrase"
 msgid "Remove recipe image"
-msgstr "Премахни снимката на рецептата"
+msgstr ""
 
 #: pl-recipe-cookbook.php:135
 msgctxt "Overrides the \"Use as featured image\" phrase"
 msgid "Use as recipe image"
-msgstr "Използвай като снимка на рецептата"
+msgstr ""
 
 #: pl-recipe-cookbook.php:136
 msgctxt "The post type archive label used in nav menus"
 msgid "Recipe archives"
-msgstr "Архив с рецепти"
+msgstr ""
 
 #: pl-recipe-cookbook.php:137
 msgctxt "Overrides the \"Insert into post\" phrase"
 msgid "Insert into recipe"
-msgstr "Вмъкни в рецептата"
+msgstr ""
 
 #: pl-recipe-cookbook.php:138
 msgctxt "Overrides the \"Uploaded to this post\" phrase"
 msgid "Uploaded to this recipe"
-msgstr "Качено към тази рецепта"
+msgstr ""
 
 #: pl-recipe-cookbook.php:139
 msgctxt "Screen reader text for the filter links"
 msgid "Filter recipes list"
-msgstr "Филтрирай списъка с рецепти"
+msgstr ""
 
 #: pl-recipe-cookbook.php:140
 msgctxt "Screen reader text for the pagination"
 msgid "Recipes list navigation"
-msgstr "Навигация в списъка с рецепти"
+msgstr ""
 
 #: pl-recipe-cookbook.php:141
 msgctxt "Screen reader text for the items list"
 msgid "Recipes list"
-msgstr "Списък с рецепти"
+msgstr ""
 
 #: pl-recipe-cookbook.php:170
 msgctxt "taxonomy general name"
 msgid "Recipe Categories"
-msgstr "Категории рецепти"
+msgstr ""
 
 #: pl-recipe-cookbook.php:171
 msgctxt "taxonomy singular name"
 msgid "Recipe Category"
-msgstr "Категория рецепти"
+msgstr ""
 
 #: pl-recipe-cookbook.php:172
 msgid "Search Recipe Categories"
-msgstr "Търси категории рецепти"
+msgstr ""
 
 #: pl-recipe-cookbook.php:173
 msgid "All Recipe Categories"
-msgstr "Всички категории рецепти"
+msgstr ""
 
 #: pl-recipe-cookbook.php:174
 msgid "Parent Recipe Category"
-msgstr "Родителска категория"
+msgstr ""
 
 #: pl-recipe-cookbook.php:175
 msgid "Parent Recipe Category:"
-msgstr "Родителска категория:"
+msgstr ""
 
 #: pl-recipe-cookbook.php:176
 msgid "Edit Recipe Category"
-msgstr "Редактирай категория"
+msgstr ""
 
 #: pl-recipe-cookbook.php:177
 msgid "Update Recipe Category"
-msgstr "Обнови категория"
+msgstr ""
 
 #: pl-recipe-cookbook.php:178
 msgid "Add New Recipe Category"
-msgstr "Добави нова категория"
+msgstr ""
 
 #: pl-recipe-cookbook.php:179
 msgid "New Recipe Category Name"
-msgstr "Име на нова категория"
+msgstr ""
 
 #: pl-recipe-cookbook.php:199
 msgctxt "taxonomy general name"
 msgid "Recipe Tags"
-msgstr "Тагове за рецепти"
+msgstr ""
 
 #: pl-recipe-cookbook.php:200
 msgctxt "taxonomy singular name"
 msgid "Recipe Tag"
-msgstr "Таг за рецепта"
+msgstr ""
 
 #: pl-recipe-cookbook.php:201
 msgid "Search Recipe Tags"
-msgstr "Търси тагове"
+msgstr ""
 
 #: pl-recipe-cookbook.php:202
 msgid "Popular Recipe Tags"
-msgstr "Популярни тагове"
+msgstr ""
 
 #: pl-recipe-cookbook.php:203
 msgid "All Recipe Tags"
-msgstr "Всички тагове"
+msgstr ""
 
 #: pl-recipe-cookbook.php:204
 msgid "Edit Recipe Tag"
-msgstr "Редактирай таг"
+msgstr ""
 
 #: pl-recipe-cookbook.php:205
 msgid "Update Recipe Tag"
-msgstr "Обнови таг"
+msgstr ""
 
 #: pl-recipe-cookbook.php:206
 msgid "Add New Recipe Tag"
-msgstr "Добави нов таг"
+msgstr ""
 
 #: pl-recipe-cookbook.php:207
 msgid "New Recipe Tag Name"
-msgstr "Име на нов таг"
+msgstr ""
 
 #: pl-recipe-cookbook.php:208
 msgid "Separate recipe tags with commas"
-msgstr "Разделете таговете със запетаи"
+msgstr ""
 
 #: pl-recipe-cookbook.php:209
 msgid "Add or remove recipe tags"
-msgstr "Добави или премахни тагове"
+msgstr ""
 
 #: pl-recipe-cookbook.php:210
 msgid "Choose from the most used recipe tags"
-msgstr "Избери от най-използваните тагове"
+msgstr ""
 
 #: pl-recipe-cookbook.php:211
 #: templates/archive-pl-recipe.php:142
 #: templates/taxonomy-pl_recipe_cat.php:137
 #: templates/taxonomy-pl_recipe_tag.php:137
 msgid "Tags"
-msgstr "Тагове"
+msgstr ""
 
 #: pl-recipe-cookbook.php:235
 msgid "Recipe Details"
-msgstr "Детайли на рецептата"
+msgstr ""
 
 #: pl-recipe-cookbook.php:260
 msgid "Preparation Time (minutes):"
-msgstr "Време за подготовка (минути):"
+msgstr ""
 
 #: pl-recipe-cookbook.php:264
 msgid "Cooking Time (minutes):"
-msgstr "Време за готвене (минути):"
+msgstr ""
 
 #: pl-recipe-cookbook.php:274
 msgid "Select Difficulty"
-msgstr "Избери трудност"
+msgstr ""
 
 #: pl-recipe-cookbook.php:281
 msgid "Ingredients:"
-msgstr "Продукти:"
+msgstr ""
 
 #: pl-recipe-cookbook.php:282
 msgid "Use [Section Name] to create sections. Example:"
-msgstr "Използвайте [Име на секция] за създаване на секции. Пример:"
+msgstr ""
 
 #: pl-recipe-cookbook.php:283
 msgid "For the dough"
-msgstr "За тестото"
+msgstr ""
 
 #: pl-recipe-cookbook.php:283
 msgid "For the filling"
-msgstr "За плънката"
+msgstr ""
 
 #: pl-recipe-cookbook.php:287
 msgid "Instructions (one step per line):"
-msgstr "Инструкции (една стъпка на ред):"
+msgstr ""
 
 #: pl-recipe-cookbook.php:468
-#, fuzzy
 msgid "Recipe Search by Ingredients"
-msgstr "Намери Рецепта по Продукти"
+msgstr ""
 
 #: pl-recipe-cookbook.php:684
 msgid "Invalid taxonomy"
 msgstr ""
 
 #: pl-recipe-cookbook.php:699
-#, fuzzy
 msgid "No more items"
-msgstr "Зареди Още Рецепти"
+msgstr ""
 
 #: templates/archive-pl-recipe.php:24
 #: templates/taxonomy-pl_recipe_cat.php:29
 #: templates/taxonomy-pl_recipe_tag.php:29
 msgid "Search recipes..."
-msgstr "Търсене на рецепти..."
+msgstr ""
 
 #: templates/archive-pl-recipe.php:32
 #: templates/taxonomy-pl_recipe_cat.php:37
 #: templates/taxonomy-pl_recipe_tag.php:37
 msgid "Search"
-msgstr "Търси"
+msgstr ""
 
 #: templates/archive-pl-recipe.php:111
 #: templates/archive-pl-recipe.php:146
@@ -877,98 +849,98 @@ msgstr ""
 #: templates/taxonomy-pl_recipe_tag.php:162
 #: templates/taxonomy-pl_recipe_tag.php:164
 msgid "Load More"
-msgstr "Зареди още"
+msgstr ""
 
 #: templates/archive-pl-recipe.php:249
 #: templates/taxonomy-pl_recipe_cat.php:259
 #: templates/taxonomy-pl_recipe_tag.php:259
 msgid "&laquo; Previous"
-msgstr "&laquo; Предишна"
+msgstr ""
 
 #: templates/archive-pl-recipe.php:250
 #: templates/taxonomy-pl_recipe_cat.php:260
 #: templates/taxonomy-pl_recipe_tag.php:260
 msgid "Next &raquo;"
-msgstr "Следваща &raquo;"
+msgstr ""
 
 #: templates/page-recipe-search.php:31
 msgid "Find Recipe by Ingredients"
-msgstr "Намери Рецепта по Продукти"
+msgstr ""
 
 #: templates/page-recipe-search.php:34
 msgid "Select the ingredients you have and discover delicious recipes you can make!"
-msgstr "Изберете продуктите, които имате и открийте вкусни рецепти, които можете да приготвите!"
+msgstr ""
 
 #: templates/page-recipe-search.php:41
 msgid "Select Ingredients"
-msgstr "Избери Продукти"
+msgstr ""
 
 #: templates/page-recipe-search.php:48
 msgid "All selected (exact match)"
-msgstr "Всички избрани (точно съвпадение)"
+msgstr ""
 
 #: templates/page-recipe-search.php:53
 msgid "At least one ingredient"
-msgstr "Поне една съставка"
+msgstr ""
 
 #: templates/page-recipe-search.php:60
 msgid "Selected:"
-msgstr "Избрани:"
+msgstr ""
 
 #: templates/page-recipe-search.php:62
 msgid "Clear All"
-msgstr "Изчисти Всички"
+msgstr ""
 
 #: templates/page-recipe-search.php:93
 msgid "No ingredients available."
-msgstr "Няма налични съставки."
+msgstr ""
 
 #: templates/page-recipe-search.php:102
 msgid "Search Results"
-msgstr "Резултати от Търсенето"
+msgstr ""
 
 #: templates/page-recipe-search.php:117
 msgid "Load More Recipes"
-msgstr "Зареди Още Рецепти"
+msgstr ""
 
 #: templates/single-pl-recipe.php:86
 msgid "Total Time:"
-msgstr "Общо време:"
+msgstr ""
 
 #: templates/single-pl-recipe.php:132
 #: templates/single-pl-recipe.php:363
 msgid "Jump to Section"
-msgstr "Към секция"
+msgstr ""
 
 #: templates/single-pl-recipe.php:148
 #: templates/single-pl-recipe.php:379
 msgid "Categories & Tags"
-msgstr "Категории и тагове"
+msgstr ""
 
 #: templates/single-pl-recipe.php:179
 msgid "Shopping Mode"
-msgstr "Режим на пазаруване"
+msgstr ""
 
 #: templates/single-pl-recipe.php:321
 msgid "Categories:"
-msgstr "Категории:"
+msgstr ""
 
 #: templates/single-pl-recipe.php:335
 msgid "Tags:"
-msgstr "Тагове:"
+msgstr ""
 
 #: templates/single-pl-recipe.php:420
 msgid "You might also like"
-msgstr "Може да харесате и"
+msgstr ""
 
 #: templates/taxonomy-pl_recipe_cat.php:268
 msgid "No recipes found in this category."
-msgstr "Не са намерени рецепти в тази категория."
+msgstr ""
 
 #: templates/taxonomy-pl_recipe_tag.php:18
 msgid "Tag"
-msgstr "Таг"
+msgstr ""
 
 #: templates/taxonomy-pl_recipe_tag.php:268
 msgid "No recipes found with this tag."
-msgstr "Не са намерени рецепти с този таг."
+msgstr ""

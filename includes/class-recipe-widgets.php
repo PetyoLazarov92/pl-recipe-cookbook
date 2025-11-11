@@ -109,11 +109,11 @@ class PL_Recipe_Cooking_Helper_Widget extends WP_Widget {
 		echo '<ul class="cooking-helper-list">';
 
 		$count = 0;
-		foreach ( $measurements as $abbr => $full ) {
+		foreach ( $measurements as $measurement ) {
 			$collapsed_class = $count > 0 ? ' collapsed-item' : '';
 			echo '<li class="' . esc_attr( $collapsed_class ) . '">';
-			echo '<span class="measurement-abbr">' . esc_html( $abbr ) . '</span>';
-			echo '<span class="measurement-full">' . esc_html( $full ) . '</span>';
+			echo '<span class="measurement-abbr">' . esc_html( $measurement['abbr'] ) . '</span>';
+			echo '<span class="measurement-full">' . esc_html( $measurement['full'] ) . '</span>';
 			echo '</li>';
 			$count++;
 		}
@@ -142,24 +142,52 @@ class PL_Recipe_Cooking_Helper_Widget extends WP_Widget {
 	/**
 	 * Get measurement abbreviations and their full names
 	 *
-	 * @return array
+	 * @return array Array of measurements with 'abbr' and 'full' keys.
 	 */
 	private function get_measurements() {
 		return array(
-			/* translators: Tea cup - Original English: c.c. */
-			'c.c.' => __( 'tea cup (250 ml)', 'pl-recipe-cookbook' ),
-			/* translators: Tablespoon - Original English: tbsp */
-			'tbsp' => __( 'tablespoon (15 ml)', 'pl-recipe-cookbook' ),
-			/* translators: Teaspoon - Original English: tsp */
-			'tsp'  => __( 'teaspoon (5 ml)', 'pl-recipe-cookbook' ),
-			/* translators: Pinch - Original English: pinch */
-			'pinch' => __( 'pinch', 'pl-recipe-cookbook' ),
-			/* translators: Piece/Number - Original English: pc */
-			'pc'   => __( 'piece', 'pl-recipe-cookbook' ),
-			/* translators: Kilogram - Original English: kg */
-			'kg'   => __( 'kilogram', 'pl-recipe-cookbook' ),
-			/* translators: Gram - Original English: g */
-			'g'    => __( 'gram', 'pl-recipe-cookbook' ),
+			array(
+				/* translators: Tea cup abbreviation */
+				'abbr' => __( 'c.c.', 'pl-recipe-cookbook' ),
+				/* translators: Tea cup full name */
+				'full' => __( 'tea cup (250 ml)', 'pl-recipe-cookbook' ),
+			),
+			array(
+				/* translators: Tablespoon abbreviation */
+				'abbr' => __( 'tbsp', 'pl-recipe-cookbook' ),
+				/* translators: Tablespoon full name */
+				'full' => __( 'tablespoon (15 ml)', 'pl-recipe-cookbook' ),
+			),
+			array(
+				/* translators: Teaspoon abbreviation */
+				'abbr' => __( 'tsp', 'pl-recipe-cookbook' ),
+				/* translators: Teaspoon full name */
+				'full' => __( 'teaspoon (5 ml)', 'pl-recipe-cookbook' ),
+			),
+			array(
+				/* translators: Pinch abbreviation */
+				'abbr' => _x( 'pinch', 'cooking measurement abbr', 'pl-recipe-cookbook' ),
+				/* translators: Pinch full name */
+				'full' => _x( 'pinch', 'cooking measurement name', 'pl-recipe-cookbook' ),
+			),
+			array(
+				/* translators: Piece abbreviation */
+				'abbr' => __( 'pc', 'pl-recipe-cookbook' ),
+				/* translators: Piece full name */
+				'full' => __( 'piece', 'pl-recipe-cookbook' ),
+			),
+			array(
+				/* translators: Kilogram abbreviation */
+				'abbr' => __( 'kg', 'pl-recipe-cookbook' ),
+				/* translators: Kilogram full name */
+				'full' => __( 'kilogram', 'pl-recipe-cookbook' ),
+			),
+			array(
+				/* translators: Gram abbreviation */
+				'abbr' => __( 'g', 'pl-recipe-cookbook' ),
+				/* translators: Gram full name */
+				'full' => __( 'gram', 'pl-recipe-cookbook' ),
+			),
 		);
 	}
 
