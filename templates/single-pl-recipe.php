@@ -164,7 +164,7 @@ get_header();
 					<div class="recipe-details-wrapper">
 						<?php if ( ! empty( $db_ingredients ) || ! empty( $ingredients_meta ) ) : ?>
 							<div class="recipe-ingredients" id="ingredients">
-								<div class="recipe-section-header" onclick="toggleSection(this)">
+								<div class="recipe-section-header">
 									<h2>
 										<span class="recipe-section-icon">🛒</span>
 										<?php esc_html_e( 'Ingredients', 'pl-recipe-cookbook' ); ?>
@@ -175,7 +175,7 @@ get_header();
 									<div class="recipe-section-content-inner">
 										<div class="shopping-mode-toggle">
 											<label>
-												<input type="checkbox" id="shopping-mode-checkbox" onchange="toggleShoppingMode()">
+												<input type="checkbox" id="shopping-mode-checkbox">
 												<span>🛍️ <?php esc_html_e( 'Shopping Mode', 'pl-recipe-cookbook' ); ?></span>
 											</label>
 										</div>
@@ -228,7 +228,7 @@ get_header();
 														}
 														
 														echo '<li>';
-														echo '<input type="checkbox" class="ingredient-checkbox" onchange="toggleIngredient(this)">';
+														echo '<input type="checkbox" class="ingredient-checkbox">';
 														echo '<span class="ingredient-text">' . esc_html( $ingredient_text ) . '</span>';
 														echo '</li>';
 													}
@@ -264,7 +264,7 @@ get_header();
 															echo '<ul class="ingredients-list">';
 														}
 														echo '<li>';
-														echo '<input type="checkbox" class="ingredient-checkbox" onchange="toggleIngredient(this)">';
+														echo '<input type="checkbox" class="ingredient-checkbox">';
 														echo '<span class="ingredient-text">' . esc_html( $line ) . '</span>';
 														echo '</li>';
 													}
@@ -283,7 +283,7 @@ get_header();
 
 						<?php if ( $instructions ) : ?>
 							<div class="recipe-instructions" id="instructions">
-								<div class="recipe-section-header" onclick="toggleSection(this)">
+								<div class="recipe-section-header">
 									<h2>
 										<span class="recipe-section-icon">📝</span>
 										<?php esc_html_e( 'Instructions', 'pl-recipe-cookbook' ); ?>

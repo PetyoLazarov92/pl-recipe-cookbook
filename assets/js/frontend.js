@@ -37,6 +37,29 @@
 		}
 	}
 
+	// Initialize event listeners on DOM ready
+	document.addEventListener('DOMContentLoaded', function() {
+		// Section toggle listeners
+		document.querySelectorAll('.recipe-section-header').forEach(function(header) {
+			header.addEventListener('click', function() {
+				toggleSection(this);
+			});
+		});
+
+		// Shopping mode checkbox listener
+		const shoppingCheckbox = document.getElementById('shopping-mode-checkbox');
+		if (shoppingCheckbox) {
+			shoppingCheckbox.addEventListener('change', toggleShoppingMode);
+		}
+
+		// Ingredient checkbox listeners
+		document.querySelectorAll('.ingredient-checkbox').forEach(function(checkbox) {
+			checkbox.addEventListener('change', function() {
+				toggleIngredient(this);
+			});
+		});
+	});
+
 	// Smooth scroll for TOC links with offset for sticky header
 	document.querySelectorAll('.toc-link').forEach(link => {
 		link.addEventListener('click', function(e) {
