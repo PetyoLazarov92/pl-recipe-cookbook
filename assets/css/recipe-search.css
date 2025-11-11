@@ -135,7 +135,7 @@
 
 /* Selected Ingredients Display */
 .selected-ingredients-widget {
-	min-height: 148.8px;
+	/* min-height: 148.8px; */
 	margin-bottom: 18px;
 	background: #fff;
 	border: 2px solid #27ae60;
@@ -708,7 +708,7 @@ box-shadow: none;
 
 	/* Selected ingredients widget adjustments for mobile */
 	.selected-ingredients-widget {
-		min-height: 147.2px;
+		/* min-height: 147.2px; */
 		margin-bottom: 15px;
 	}
 
@@ -774,7 +774,7 @@ box-shadow: none;
 
 	/* Selected ingredients widget for small screens */
 	.selected-ingredients-widget{
-		min-height: 133.6px;
+		/* min-height: 133.6px; */
 	}
 
 	.selected-ingredients-widget .widget-content {

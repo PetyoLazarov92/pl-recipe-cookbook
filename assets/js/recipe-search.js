@@ -216,7 +216,7 @@
 			if (count === 0) {
 				$container.html(`<p class="no-selection">${plRecipeSearch.i18n.noSelection}</p>`);
 				$clearBtn.hide();
-				$toggleBtn.hide();
+				$toggleBtn.css('visibility', 'hidden');
 				return;
 			}
 
@@ -238,9 +238,9 @@
 			    const $content = $('.selected-ingredients-widget .widget-content');
 			    const contentHeight = $content[0].scrollHeight;
 			    if (contentHeight > 80) {
-			        $toggleBtn.show();
+			        $toggleBtn.css('visibility', 'visible');
 			    } else {
-			        $toggleBtn.hide();
+			        $toggleBtn.css('visibility', 'hidden');
 			    }
 			}, 50);
 		}
