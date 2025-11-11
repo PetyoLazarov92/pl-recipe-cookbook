@@ -417,3 +417,141 @@ msgstr "Изчисти Всички"
 
 msgid "Notes"
 msgstr "Бележки"
+
+msgid "Recipe Sidebar"
+msgstr "Странична Лента за Рецепти"
+
+msgid "Widget area displayed below the table of contents on single recipe pages."
+msgstr "Област за уиджети, показвана под съдържанието на единични страници с рецепти."
+
+msgid "Cooking Helper"
+msgstr "Кулинарен Помощник"
+
+msgid "Displays a reference guide for cooking measurements and abbreviations."
+msgstr "Показва справочник за кулинарни мерки и съкращения."
+
+msgid "Common cooking measurements:"
+msgstr "Често използвани мерни единици:"
+
+msgid "Title:"
+msgstr "Заглавие:"
+
+#. Abbreviation for "чаша" (cup)
+msgid "ч.ч."
+msgstr "ч.ч."
+
+msgid "чаша (250 мл)"
+msgstr "чаша (250 мл)"
+
+#. Abbreviation for "супена лъжица" (tablespoon)
+msgid "с.л."
+msgstr "с.л."
+
+msgid "супена лъжица (15 мл)"
+msgstr "супена лъжица (15 мл)"
+
+#. Abbreviation for "чаена лъжица" (teaspoon)
+msgid "ч.л."
+msgstr "ч.л."
+
+msgid "чаена лъжица (5 мл)"
+msgstr "чаена лъжица (5 мл)"
+
+#. Abbreviation for "щипка" (pinch)
+msgid "щ."
+msgstr "щ."
+
+msgid "щипка"
+msgstr "щипка"
+
+#. Abbreviation for "брой" (piece/number)
+msgid "бр."
+msgstr "бр."
+
+msgid "брой"
+msgstr "брой"
+
+#. Abbreviation for "килограм" (kilogram)
+
+
+#. Abbreviation for "грам" (gram)
+
+
+#. Abbreviation for "литър" (liter)
+msgid "л"
+msgstr "л"
+
+msgid "литър"
+msgstr "литър"
+
+#. Abbreviation for "милилитър" (milliliter)
+msgid "мл"
+msgstr "мл"
+
+msgid "милилитър"
+msgstr "милилитър"
+
+#. Tea cup - Original English: c.c.
+msgid "c.c."
+msgstr "ч.ч."
+
+msgid "tea cup (250 ml)"
+msgstr "чаена чаша (250 мл)"
+
+#. Tablespoon - Original English: tbsp
+msgid "tbsp"
+msgstr "с.л."
+
+msgid "tablespoon (15 ml)"
+msgstr "супена лъжица (15 мл)"
+
+#. Teaspoon - Original English: tsp
+msgid "tsp"
+msgstr "ч.л."
+
+msgid "teaspoon (5 ml)"
+msgstr "чаена лъжица (5 мл)"
+
+#. Pinch - Original English: pinch
+msgid "pinch"
+msgstr "щ."
+
+#. Piece/Number - Original English: pc
+msgid "pc"
+msgstr "бр."
+
+msgid "piece"
+msgstr "брой"
+
+msgid "kg"
+msgstr "кг"
+
+msgid "kilogram"
+msgstr "килограм"
+
+msgid "g"
+msgstr "г"
+
+msgid "gram"
+msgstr "грам"
+
+msgid "Description:"
+msgstr "Описание:"
+
+msgid "Full List Page:"
+msgstr "Страница с пълен списък:"
+
+msgid "— Select —"
+msgstr "— Избери —"
+
+msgid "Full List"
+msgstr "Пълен списък"
+
+msgid "Show All"
+msgstr "Покажи всички"
+
+msgid "Show More"
+msgstr "Покажи още"
+
+msgid "Show Less"
+msgstr "Скрий"

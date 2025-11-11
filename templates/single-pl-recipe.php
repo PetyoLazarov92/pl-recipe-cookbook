@@ -349,29 +349,47 @@ get_header();
 
 		</article>
 
+		<!-- Mobile Widgets (shown below content on mobile) -->
+		<?php if ( is_active_sidebar( 'recipe-sidebar' ) ) : ?>
+			<div class="recipe-mobile-widgets">
+				<?php dynamic_sidebar( 'recipe-sidebar' ); ?>
+			</div>
+		<?php endif; ?>
+
 		<!-- Sidebar with Table of Contents (Outside main container) -->
 		<aside class="recipe-sidebar">
-			<div class="recipe-toc-wrapper">
-				<h3 class="recipe-toc-title"><?php esc_html_e( 'Jump to Section', 'pl-recipe-cookbook' ); ?></h3>
-				<nav class="recipe-toc">
-					<ul class="recipe-toc-list">
-						<?php if ( get_the_content() ) : ?>
-							<li><a href="#description" class="toc-link"><?php esc_html_e( 'Description', 'pl-recipe-cookbook' ); ?></a></li>
-						<?php endif; ?>
-						
-						<?php if ( ! empty( $db_ingredients ) || ! empty( $ingredients_meta ) ) : ?>
-							<li><a href="#ingredients" class="toc-link"><?php esc_html_e( 'Ingredients', 'pl-recipe-cookbook' ); ?></a></li>
-						<?php endif; ?>
-						
-						<?php if ( $instructions ) : ?>
-							<li><a href="#instructions" class="toc-link"><?php esc_html_e( 'Instructions', 'pl-recipe-cookbook' ); ?></a></li>
-						<?php endif; ?>
-						
-						<?php if ( $categories || $tags ) : ?>
-							<li><a href="#categories-tags" class="toc-link"><?php esc_html_e( 'Categories & Tags', 'pl-recipe-cookbook' ); ?></a></li>
-						<?php endif; ?>
-					</ul>
-				</nav>
+			<div class="recipe-sidebar-sticky-container">
+				<div class="recipe-toc-wrapper">
+					<h3 class="recipe-toc-title"><?php esc_html_e( 'Jump to Section', 'pl-recipe-cookbook' ); ?></h3>
+					<nav class="recipe-toc">
+						<ul class="recipe-toc-list">
+							<?php if ( get_the_content() ) : ?>
+								<li><a href="#description" class="toc-link"><?php esc_html_e( 'Description', 'pl-recipe-cookbook' ); ?></a></li>
+							<?php endif; ?>
+							
+							<?php if ( ! empty( $db_ingredients ) || ! empty( $ingredients_meta ) ) : ?>
+								<li><a href="#ingredients" class="toc-link"><?php esc_html_e( 'Ingredients', 'pl-recipe-cookbook' ); ?></a></li>
+							<?php endif; ?>
+							
+							<?php if ( $instructions ) : ?>
+								<li><a href="#instructions" class="toc-link"><?php esc_html_e( 'Instructions', 'pl-recipe-cookbook' ); ?></a></li>
+							<?php endif; ?>
+							
+							<?php if ( $categories || $tags ) : ?>
+								<li><a href="#categories-tags" class="toc-link"><?php esc_html_e( 'Categories & Tags', 'pl-recipe-cookbook' ); ?></a></li>
+							<?php endif; ?>
+						</ul>
+					</nav>
+				</div>
+
+				<?php
+				// Display recipe sidebar widgets below TOC.
+				if ( is_active_sidebar( 'recipe-sidebar' ) ) {
+					echo '<div class="recipe-sidebar-widgets">';
+					dynamic_sidebar( 'recipe-sidebar' );
+					echo '</div>';
+				}
+				?>
 			</div>
 		</aside>
 
@@ -407,6 +425,7 @@ get_header();
 								$rel_difficulty = get_post_meta( get_the_ID(), '_pl_recipe_difficulty', true );
 								$rel_prep_time  = get_post_meta( get_the_ID(), '_pl_recipe_prep_time', true );
 								$rel_cook_time  = get_post_meta( get_the_ID(), '_pl_recipe_cook_time', true );
+								$rel_servings   = get_post_meta( get_the_ID(), '_pl_recipe_servings', true );
 								?>
 								<article class="related-recipe-card">
 									<a href="<?php the_permalink(); ?>" class="related-recipe-link">
@@ -459,6 +478,14 @@ get_header();
 														?>
 													</span>
 												<?php endif; ?>
+												<?php if ( $rel_servings ) : ?>
+													<span class="related-meta-item">
+														<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+															<path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+														</svg>
+														<?php echo esc_html( $rel_servings ); ?>
+													</span>
+												<?php endif; ?>
 											</div>
 										</div>
 									</a>
@@ -475,99 +502,6 @@ get_header();
 			?>
 
 	</div><!-- .recipe-layout-container -->
-
-	<script>
-			function toggleSection(header) {
-				header.classList.toggle('collapsed');
-				const content = header.nextElementSibling;
-				content.classList.toggle('collapsed');
-			}
-
-			function toggleShoppingMode() {
-				const checkbox = document.getElementById('shopping-mode-checkbox');
-				const container = document.getElementById('ingredients-list');
-				if (checkbox.checked) {
-					container.classList.add('shopping-mode-active');
-				} else {
-					container.classList.remove('shopping-mode-active');
-					// Uncheck all ingredients
-					const checkboxes = container.querySelectorAll('.ingredient-checkbox');
-					checkboxes.forEach(cb => {
-						cb.checked = false;
-						cb.parentElement.classList.remove('checked');
-					});
-				}
-			}
-
-			function toggleIngredient(checkbox) {
-				if (checkbox.checked) {
-					checkbox.parentElement.classList.add('checked');
-				} else {
-					checkbox.parentElement.classList.remove('checked');
-				}
-			}
-
-			// Smooth scroll for TOC links with offset for sticky header
-			document.querySelectorAll('.toc-link').forEach(link => {
-				link.addEventListener('click', function(e) {
-					e.preventDefault();
-					const target = document.querySelector(this.getAttribute('href'));
-					if (target) {
-						const headerOffset = 120; // Offset for sticky navigation
-						const elementPosition = target.getBoundingClientRect().top;
-						const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-						
-						window.scrollTo({
-							top: offsetPosition,
-							behavior: 'smooth'
-						});
-					}
-				});
-			});
-
-			// Highlight active TOC link on scroll
-			let ticking = false;
-			window.addEventListener('scroll', function() {
-				if (!ticking) {
-					window.requestAnimationFrame(function() {
-						const tocLinks = document.querySelectorAll('.toc-link');
-						const headerOffset = 150;
-						
-						let current = '';
-						let currentPosition = -1;
-						
-						tocLinks.forEach(link => {
-							const href = link.getAttribute('href');
-							if (!href) return;
-							
-							const section = document.querySelector(href);
-							if (!section) return;
-							
-							const sectionTop = section.getBoundingClientRect().top + window.pageYOffset;
-							const sectionBottom = sectionTop + section.offsetHeight;
-							const scrollPos = window.pageYOffset + headerOffset;
-							
-							if (scrollPos >= sectionTop && scrollPos < sectionBottom) {
-								if (sectionTop > currentPosition) {
-									currentPosition = sectionTop;
-									current = href;
-								}
-							}
-						});
-						
-						tocLinks.forEach(link => {
-							link.classList.remove('active');
-							if (link.getAttribute('href') === current) {
-								link.classList.add('active');
-							}
-						});
-						
-						ticking = false;
-					});
-					ticking = true;
-				}
-			});
-			</script>
 
 	<?php endwhile; ?>
 </main>

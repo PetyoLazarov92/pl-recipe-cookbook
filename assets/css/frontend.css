@@ -471,27 +471,51 @@ html {
 .recipe-sidebar {
 	position: relative;
 	height: 100%;
-	z-index: 10; /* Above main content */
+}
+
+/* Sticky container for TOC + widgets */
+.recipe-sidebar-sticky-container {
+	position: -webkit-sticky; /* Safari */
+	position: sticky;
+	top: 5rem;
+	max-height: calc(100vh - 7rem);
+	will-change: transform;
+	z-index: 10;
+}
+
+/* Sidebar widgets with fade transition */
+.recipe-sidebar-widgets {
+	transition: opacity 0.3s ease-out, max-height 0.3s ease-out;
 }
 
 .recipe-toc-wrapper {
-	position: -webkit-sticky; /* Safari */
-	position: sticky;
-	top: 6rem;
+	position: relative;
 	background: #fff;
 	border: 2px solid #e9ecef;
 	border-radius: 12px;
 	padding: 25px;
 	box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
-	max-height: calc(100vh - 40px); /* Prevent overflow */
-	overflow-y: auto;
-	will-change: transform; /* Performance optimization */
 }
 
 /* Hide desktop sidebar on mobile */
 @media (max-width: 1024px) {
 	.recipe-sidebar {
 		display: none;
+	}
+}
+
+/* Mobile widgets container - shown below article on mobile */
+.recipe-mobile-widgets {
+	display: none;
+}
+
+@media (max-width: 1024px) {
+	.recipe-mobile-widgets {
+		display: block;
+	}
+	
+	.recipe-mobile-widgets .recipe-widget {
+		margin-bottom: 20px;
 	}
 }
 
@@ -1306,9 +1330,6 @@ grid-template-columns: repeat(4, 1fr);
 /* ==========================================================================
    Related Recipes Section
    ========================================================================== */
-.related-recipes-section {
-	padding: 20px 0;
-}
 
 .related-recipes-title {
 	font-size: 1.6em;
@@ -1331,11 +1352,6 @@ grid-template-columns: repeat(4, 1fr);
 }
 
 @media (max-width: 768px) {
-	.related-recipes-section {
-		margin-top: 40px;
-		padding: 30px 20px;
-	}
-	
 	.related-recipes-title {
 		font-size: 1.5em;
 		margin-bottom: 20px;
@@ -1694,8 +1710,6 @@ grid-template-columns: repeat(4, 1fr);
 	
 	/* Compact related recipes */
 	.related-recipes-section {
-		margin-top: 24px;
-		padding: 20px 16px;
 		border-radius: 6px;
 	}
 	
@@ -1794,5 +1808,215 @@ grid-template-columns: repeat(4, 1fr);
 	
 	.related-recipe-image {
 		height: 140px;
+	}
+}
+
+/* ==========================================================================
+   Recipe Widgets Styles
+   ========================================================================== */
+
+/* Remove individual sticky behavior - parent container handles it */
+.recipe-sidebar-widgets .recipe-widget {
+	position: relative;
+	z-index: 5;
+}
+
+/* Recipe widget container */
+.recipe-widget {
+	background: #fff;
+	border-radius: 12px;
+	padding: 20px;
+	margin-top: 20px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+	transition: box-shadow 0.3s ease;
+}
+
+.recipe-widget:hover {
+	box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* Widget title */
+.recipe-widget-title {
+	margin: 0 0 15px 0;
+	padding: 0;
+	font-size: 18px;
+	font-weight: 700;
+	color: #2c3e50;
+	border-bottom: 2px solid #4CAF50;
+	padding-bottom: 10px;
+}
+
+/* Cooking Helper Widget Styles */
+.cooking-helper-content {
+	font-size: 14px;
+	line-height: 1.6;
+}
+
+.cooking-helper-intro {
+	margin: 0 0 12px 0;
+	color: #555;
+	font-weight: 600;
+	font-size: 13px;
+}
+
+.cooking-helper-collapsible {
+	position: relative;
+}
+
+.cooking-helper-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	max-height: 90px;
+	overflow: hidden;
+	transition: max-height 0.3s ease;
+}
+
+.cooking-helper-list.expanded {
+	max-height: 1000px;
+}
+
+.cooking-helper-list li {
+	padding: 6px 10px;
+	margin-bottom: 4px;
+	background: #f8f9fa;
+	border-radius: 6px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	transition: background-color 0.2s ease;
+}
+
+.cooking-helper-list li:hover {
+	background: #e8f5e9;
+}
+
+.cooking-helper-list li:last-child {
+	margin-bottom: 0;
+}
+
+.cooking-helper-list li:nth-child(2) {
+	opacity: 0.5;
+	pointer-events: none;
+}
+
+.cooking-helper-list.expanded li:nth-child(2) {
+	opacity: 1;
+	pointer-events: auto;
+}
+
+/* Collapsed items */
+.collapsed-item {
+	display: none;
+}
+
+.cooking-helper-list.expanded .collapsed-item {
+	display: flex;
+}
+
+.cooking-helper-collapsible .collapsed-item.cooking-helper-link {
+	display: none;
+}
+
+.cooking-helper-collapsible .collapsed-item.cooking-helper-link.show {
+	display: inline-block;
+}
+
+.cooking-helper-toggle {
+	display: block;
+	width: 100%;
+	margin-top: 10px;
+	padding: 8px 16px;
+	background: #f0f0f0;
+	border: none;
+	border-radius: 6px;
+	color: #4CAF50;
+	font-size: 13px;
+	font-weight: 600;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	text-align: center;
+}
+
+.cooking-helper-toggle:hover {
+	background: #e0e0e0;
+}
+
+.measurement-abbr {
+	font-weight: 700;
+	color: #4CAF50;
+	font-size: 14px;
+	min-width: 45px;
+	display: inline-block;
+}
+
+.measurement-full {
+	color: #555;
+	flex: 1;
+	text-align: right;
+	font-size: 12px;
+}
+
+.cooking-helper-link {
+	display: inline-block;
+	margin-top: 10px;
+	padding: 8px 16px;
+	background: #4CAF50;
+	color: #fff !important;
+	text-decoration: none;
+	border-radius: 6px;
+	font-size: 13px;
+	font-weight: 600;
+	transition: background-color 0.3s ease;
+	text-align: center;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.cooking-helper-link:hover {
+	background: #45a049;
+}
+
+/* Mobile responsive for widgets */
+@media (max-width: 1024px) {
+	/* Reset sticky container on mobile */
+	.recipe-sidebar-sticky-container {
+		position: relative;
+		top: auto;
+		max-height: none;
+		overflow-y: visible;
+	}
+	
+	/* Disable sticky on mobile and show widgets */
+	.recipe-sidebar-widgets {
+		margin-top: 20px;
+	}
+	
+	.recipe-sidebar-widgets .recipe-widget {
+		position: relative;
+		top: auto;
+		margin-bottom: 20px;
+		padding: 16px;
+	}
+
+	.recipe-widget-title {
+		font-size: 16px;
+	}
+
+	.cooking-helper-content {
+		font-size: 13px;
+	}
+
+	.measurement-abbr {
+		font-size: 13px;
+		min-width: 40px;
+	}
+
+	.measurement-full {
+		font-size: 11px;
+	}
+
+	.cooking-helper-intro {
+		font-size: 12px;
 	}
 }

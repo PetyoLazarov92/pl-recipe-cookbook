@@ -88,6 +88,10 @@ class PL_Recipe_Manager {
 		// Recipe display helpers (shortcodes and functions).
 		require_once plugin_dir_path( __FILE__ ) . 'includes/class-recipe-display-helpers.php';
 
+		// Recipe widgets.
+		require_once plugin_dir_path( __FILE__ ) . 'includes/class-recipe-widgets.php';
+		PL_Recipe_Widgets::init();
+
 		// Admin classes.
 		if ( is_admin() ) {
 			require_once plugin_dir_path( __FILE__ ) . 'admin/class-ingredients-admin.php';
