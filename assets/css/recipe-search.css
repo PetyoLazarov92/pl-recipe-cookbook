@@ -400,6 +400,8 @@
 	margin: 0;
 	color: #2c3e50;
 	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
 	align-items: center;
 	gap: 8px;
 	font-weight: 600;
@@ -651,6 +653,10 @@ box-shadow: none;
 
 /* Responsive Design */
 @media (max-width: 992px) {
+	.search-results-header h2 {
+		font-size: 22px;
+	}
+
 	.recipe-search-main {
 		grid-template-columns: 280px 1fr;
 		gap: 20px;
@@ -671,6 +677,10 @@ box-shadow: none;
 }
 
 @media (max-width: 768px) {
+	.search-results-header h2 {
+		font-size: 20px;
+	}
+
 	.recipe-search-page {
 		padding: 15px;
 	}
@@ -729,6 +739,10 @@ box-shadow: none;
 }
 
 @media (max-width: 480px) {
+	.search-results-header h2 {
+		font-size: 18px;
+	}
+
 	.recipe-search-page {
 		padding: 10px 0;
 	}

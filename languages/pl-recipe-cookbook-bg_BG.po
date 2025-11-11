@@ -490,6 +490,9 @@ msgstr "Пълен списък"
 msgid "Show More"
 msgstr "Покажи още"
 
+msgid "Hide"
+msgstr "Скрий"
+
 #: includes/class-recipe-widgets.php:132
 msgid "Show Less"
 msgstr "Скрий"
