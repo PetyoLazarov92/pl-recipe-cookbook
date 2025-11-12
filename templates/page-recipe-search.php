@@ -108,7 +108,6 @@ $categories = PL_Recipe_Ingredient_Search::get_categories_with_ingredients();
 						<?php esc_html_e( 'Search Results', 'pl-recipe-cookbook' ); ?>
 						<span id="results-count" class="results-count"></span>
 					</h2>
-					<div id="search-status" class="search-status"></div>
 				</div>
 
 				<div id="recipes-container" class="recipe-grid">

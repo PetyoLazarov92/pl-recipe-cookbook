@@ -275,7 +275,6 @@
 			$('#recipes-container').empty();
 			$('#load-more-btn').hide();
 			$('#results-count').text('');
-			$('#search-status').empty();
 
 			if (this.selectedIngredients.length > 0) {
 				this.loadRecipes(false);
@@ -304,7 +303,7 @@
 			const originalText = $button.text();
 			$button.prop('disabled', true).text(plRecipeSearch.i18n.loading);
 
-			$('#search-status').html(`<span class="loading">${plRecipeSearch.i18n.searching}</span>`);
+			$('#results-count').html(`<span class="status-loading">${plRecipeSearch.i18n.searching}</span>`);
 
 			const ingredientIds = this.selectedIngredients.map(i => i.id);
 
@@ -340,6 +339,8 @@
 						// Update results count
 						if (!append && response.data.total_found > 0) {
 							$('#results-count').text(`(${response.data.total_found} ${plRecipeSearch.i18n.found})`);
+						} else if (!append) {
+							$('#results-count').text('');
 						}
 
 						// Show/hide load more button
@@ -348,14 +349,12 @@
 						} else {
 							$button.hide();
 						}
-
-						$('#search-status').empty();
 					} else {
-						$('#search-status').html(`<span class="error">${plRecipeSearch.i18n.errorLoading}</span>`);
+						$('#results-count').html(`<span class="status-error">${plRecipeSearch.i18n.errorLoading}</span>`);
 					}
 				},
 				error: () => {
-					$('#search-status').html(`<span class="error">${plRecipeSearch.i18n.errorLoading}</span>`);
+					$('#results-count').html(`<span class="status-error">${plRecipeSearch.i18n.errorLoading}</span>`);
 					$button.prop('disabled', false).text(originalText);
 				},
 				complete: () => {
