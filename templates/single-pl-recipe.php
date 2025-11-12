@@ -359,6 +359,15 @@ get_header();
 		<!-- Sidebar with Table of Contents (Outside main container) -->
 		<aside class="recipe-sidebar">
 			<div class="recipe-sidebar-sticky-container">
+				<?php
+				// Display recipe sidebar widgets BEFORE TOC.
+				if ( is_active_sidebar( 'recipe-sidebar' ) ) {
+					echo '<div class="recipe-sidebar-widgets">';
+					dynamic_sidebar( 'recipe-sidebar' );
+					echo '</div>';
+				}
+				?>
+				
 				<div class="recipe-toc-wrapper">
 					<h3 class="recipe-toc-title"><?php esc_html_e( 'Jump to Section', 'pl-recipe-cookbook' ); ?></h3>
 					<nav class="recipe-toc">
@@ -381,15 +390,6 @@ get_header();
 						</ul>
 					</nav>
 				</div>
-
-				<?php
-				// Display recipe sidebar widgets below TOC.
-				if ( is_active_sidebar( 'recipe-sidebar' ) ) {
-					echo '<div class="recipe-sidebar-widgets">';
-					dynamic_sidebar( 'recipe-sidebar' );
-					echo '</div>';
-				}
-				?>
 			</div>
 		</aside>
 

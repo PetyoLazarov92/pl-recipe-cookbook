@@ -483,8 +483,9 @@ html {
 	z-index: 10;
 }
 
-/* Sidebar widgets with fade transition */
+/* Sidebar widgets - First position, no sticky */
 .recipe-sidebar-widgets {
+	margin-bottom: 1.5rem;
 	border-radius: 12px;
 	transition: opacity 0.3s ease-out, max-height 0.3s ease-out;
 }
@@ -541,7 +542,7 @@ html {
 }
 
 .recipe-toc-title {
-	font-size: 1.3em;
+	font-size: 1.15em;
 	color: #2c3e50;
 	margin: 0 0 20px 0;
 	padding-bottom: 12px;
@@ -1827,7 +1828,7 @@ grid-template-columns: repeat(4, 1fr);
 	background: #fff;
 	border-radius: 12px;
 	padding: 20px;
-	margin-top: 20px;
+	margin-bottom: 1.5rem;
 	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 	transition: box-shadow 0.3s ease;
 }
@@ -1868,7 +1869,7 @@ grid-template-columns: repeat(4, 1fr);
 	list-style: none;
 	margin: 0;
 	padding: 0;
-	max-height: 90px;
+	max-height: 87px;
 	overflow: hidden;
 	transition: max-height 0.3s ease;
 }
