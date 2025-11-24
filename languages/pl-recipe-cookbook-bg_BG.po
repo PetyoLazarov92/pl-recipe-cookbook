@@ -975,3 +975,15 @@ msgstr "Таг"
 #: templates/taxonomy-pl_recipe_tag.php:268
 msgid "No recipes found with this tag."
 msgstr "Не са намерени рецепти с този таг."
+
+#: templates/single-pl-recipe.php:54
+msgid "Expand image"
+msgstr "Увеличи снимката"
+
+#: templates/single-pl-recipe.php:64
+msgid "Image lightbox"
+msgstr "Преглед на снимката"
+
+#: templates/single-pl-recipe.php:65
+msgid "Close lightbox"
+msgstr "Затвори"

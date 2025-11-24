@@ -212,4 +212,60 @@
 		}
 	});
 
+	// Image Lightbox Functionality
+	document.addEventListener('DOMContentLoaded', function() {
+		const expandBtn = document.querySelector('.recipe-image-expand');
+		const lightbox = document.querySelector('.recipe-image-lightbox');
+		const closeBtn = document.querySelector('.lightbox-close');
+		const lightboxImage = document.getElementById('lightbox-image');
+		
+		if (expandBtn && lightbox && lightboxImage) {
+			// Open lightbox
+			expandBtn.addEventListener('click', function() {
+				// Get image data from button
+				const fullImageUrl = this.getAttribute('data-full-image');
+				const imageAlt = this.getAttribute('data-image-alt');
+				
+				// Set image source and alt text
+				lightboxImage.src = fullImageUrl;
+				lightboxImage.alt = imageAlt;
+				
+				// Show lightbox
+				lightbox.classList.add('active');
+				document.body.style.overflow = 'hidden';
+				
+				// Focus close button for accessibility
+				if (closeBtn) {
+					closeBtn.focus();
+				}
+			});
+			
+			// Close lightbox
+			function closeLightbox() {
+				lightbox.classList.remove('active');
+				document.body.style.overflow = '';
+				// Return focus to expand button
+				expandBtn.focus();
+			}
+			
+			if (closeBtn) {
+				closeBtn.addEventListener('click', closeLightbox);
+			}
+			
+			// Close on background click
+			lightbox.addEventListener('click', function(e) {
+				if (e.target === lightbox) {
+					closeLightbox();
+				}
+			});
+			
+			// Close on Escape key
+			document.addEventListener('keydown', function(e) {
+				if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+					closeLightbox();
+				}
+			});
+		}
+	});
+
 })();
